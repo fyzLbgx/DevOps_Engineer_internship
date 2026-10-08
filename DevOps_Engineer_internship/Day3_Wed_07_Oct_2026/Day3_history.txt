@@ -1,0 +1,76 @@
+    1  ls
+    2  mkdir day3
+    3  vim simplecommands.sh
+    4  chmod u+x simplecommands.sh 
+    5  ./simplecommands.sh 
+    6  vim simplecommands.sh
+    7  vim simplecommands.sh 
+    8  nano simplecommands.sh 
+    9  mv simplecommands_v1.sh 
+   10  mv simplecommands.sh simplecommands_v1.sh 
+   11  ls
+   12  mv simplecommands_v1.sh day3/ && cd day3/
+   13  nano simplecommands.sh 
+   14  clear
+   15  cat simplecommands_v1.sh 
+   16  ls
+   17  cd day3/
+   18  ls
+   19  simple_temp_directory_backup.sh
+   20  vim simple_temp_directory_backup.sh
+   21  chmod +x simple_temp_directory_backup.sh 
+   22  ./simple_temp_directory_backup.sh 
+   23  vim simple_temp_directory_backup.sh
+   24  ./simple_temp_directory_backup.sh 
+   25  rm tback/
+   26  rmdir tback/
+   27  ls tback/
+   28  rm -rf tback/
+   29  ./simple_temp_directory_backup.sh 
+   30  ls
+   31  rm -rf tback/
+   32  rm ]
+   33  cat simple_temp_directory_backup.sh 
+   34  vim simple_temp_directory_backup.sh 
+   35  ./simple_temp_directory_backup.sh 
+   36  cat simple_temp_directory_backup.sh 
+   37  vim simple_temp_directory_backup.sh 
+   38  ./simple_temp_directory_backup.sh 
+   39  ls
+   40  cd temp/
+   41  ls
+   42  cd ..
+   43  ./simple_temp_directory_backup.sh 
+   44  ls temp/
+   45  vim simple_temp_directory_backup.sh 
+   46  ./simple_temp_directory_backup.sh 
+   47  ls /tmp/
+   48  ls temp/
+   49  ./simple_temp_directory_backup.sh 
+   50  ls temp/
+   51  vim search_inside_home.sh
+   52  chmod +x search_inside_home.sh 
+   53  ./search_inside_home.sh 
+   54  ls
+   55  history
+   56  cd ..
+   57  ls
+   58  git clone
+   59  git clone https://github.com/fyzLbgx/DevOps_Engineer_internship
+   60  ls
+   61  cd DevOps_Engineer_internship/
+   62  ls
+   63  cp ../../day3/ Day3_Wed_07_Oct_2026
+   64  cp -r ../../day3/ Day3_Wed_07_Oct_2026
+   65  ls
+   66  mv Day2_Mon_07_Oct_2026/ Day2_Tue_06_Oct_2026/
+   67  ls
+   68  mv Day1_Mon_06_Oct_2026/ Day1_Mon_05_Oct_2026/
+   69  ls Day3_Wed_07_Oct_2026/
+   70  history
+   71  history -d 60
+   72  history -d 61
+   73  history
+   74  history -d 60
+   75  history
+   76  history > Day3_Wed_07_Oct_2026/Day3_history.txt
