@@ -1,0 +1,196 @@
+    1  ls
+    2  history
+    3  ls
+    4  ls -l
+    5  echo "My name is $USER " > myfile
+    6  ls
+    7  sudo useradd -m -s /bin/bash anas
+    8  sudo usermod -aG sudo anas 
+    9  sudo useradd -m -s /bin/bash adnan
+   10  ll myfile 
+   11  sudo chown adnan myfile 
+   12  ll myfile 
+   13  chgrp anas myfile 
+   14  sudo chgrp anas myfile 
+   15  ll myfile 
+   16  chown :anas myfile 
+   17  sudo chown :anas myfile 
+   18  ll myfile 
+   19  sudo chgrp adnan:anas myfile 
+   20  sudo chown adnan:anas myfile 
+   21  ll myfile 
+   22  umask
+   23  sudo umask
+   24  sudo -i
+   25  umask
+   26  su -i
+   27  sudo -i
+   28  umask
+   29  exit
+   30  umask 027
+   31  bash
+   32  umask
+   33  exi
+   34  exit
+   35  umask
+   36  ll myfile 
+   37  mkdir testdir
+   38  ll testdir/
+   39  umask 0027
+   40  touch umasktest
+   41  mkdir umasktest
+   42  mkdir umasktestdir
+   43  ll 
+   44  umask 002
+   45  umask
+   46  rm -id umask*
+   47  ll
+   48  ls -l /usr/bin/passwd 
+   49  touch suidtest
+   50  chmod 4755 suidtest 
+   51  ls -l suidtest 
+   52  chmod u-x suidtest 
+   53  ls -l suidtest 
+   54  mount | grep nosuid
+   55  cat /etc/fstab 
+   56  ls -l /usr/bin/wall 
+   57  touch sgidtest
+   58  chmod g+s sgidtest 
+   59  ls -l sgidtest 
+   60  chmod +x sgidtest 
+   61  ls -l sgidtest 
+   62  ls 
+   63  groupadd sgidtest
+   64  sudo groupadd sgidtest
+   65  mkdir ~/test_sgid
+   66  sudo chown ubuntu:sgidtest ~/test_sgid
+   67  chmod 2755 test_sgid/
+   68  touch test_sgid/mytxt.txt
+   69  ls -l test_sgid/mytxt.txt 
+   70  sudo chgrp ubuntu test_sgid/
+   71  touch test_sgid/mytxt1.txt
+   72  ls -l test_sgid/mytxt.txt 
+   73  ls -l test_sgid/m
+   74  ls -l test_sgid/
+   75  sudo chgrp sgidtest test_sgid/
+   76  ls -l test_sgid/mytxt2.txt 
+   77  touch test_sgid/mytxt2.txt
+   78  ls -l test_sgid/
+   79  chmod g+s test_sgid/
+   80  ls -ld test_sgid/
+   81  touch test_sgid/mytxt3.txt
+   82  ls -l test_sgid/
+   83  chmod g+ws test_sgid/
+   84  ls -ld test_sgid/
+   85  sudo chmod g+s test_sgid/
+   86  ls -ld test_sgid/
+   87  touch test_sgid/mytxt4.txt
+   88  ls -ld test_sgid/
+   89  ls -l test_sgid/
+   90  ls
+   91  ls -ld /tmp/
+   92  mkdir stickybitest
+   93  chmod -t stickybitest/
+   94  ld stickybitest/
+   95  ll -d stickybitest/
+   96  chmod 1777 stickybitest/
+   97  ll -d stickybitest/
+   98  chmod -x stickybitest/
+   99  ll -d stickybitest/
+  100  $ echo '#!/bin/sh' > my-script.sh
+  101  $ echo 'echo Hello World' >> my-script.sh
+  102  $ chmod 755 my-script.sh
+  103  $ ./my-script.sh
+  104  Hello World
+  105  $
+  106  echo '#!/bin/sh' > my-script.sh
+  107  echo 'echo Hello World' >> my-script.sh
+  108  chmod 755 my-script.sh
+  109  ./my-script.sh 
+  110  vim myscript.sh
+  111  chmod +x myscript.sh 
+  112  ./myscript.sh 
+  113  ll myscript.sh 
+  114  chmod 644 myscript.sh 
+  115  ls
+  116  ll myscript.sh 
+  117  ll
+  118  touch tets
+  119  ls
+  120  ll
+  121  chmod 644 myscript.sh 
+  122  ll
+  123  chmod u+rx myscript.sh
+  124  sh myscript.sh 
+  125  chmod 644 myscript.sh 
+  126  ./my-script.sh 
+  127  chmod u-x myscript.sh 
+  128  ./my-script.sh 
+  129  ./myscript.sh 
+  130  sh myscript.sh 
+  131  bash myscript.sh 
+  132  . myscript.sh 
+  133  source myscript.sh 
+  134  grep "mystring" < /tmp/myfile
+  135  vim shell_script_learn 
+  136  ls
+  137  sh shell_script_learn
+  138  echo $MY_MESSAGE
+  139  chmod u+x shell_script_learn 
+  140  ./shell_script_learn 
+  141  vim script1.sh
+  142  ls
+  143  sh script1.sh 
+  144  vim script2.sh
+  145  sh script2.sh 
+  146  touch $USER_NAME_fil
+  147  touch "${USER_NAME}_file"
+  148  ls
+  149  USERNAME=ABC
+  150  touch "${USER_NAME}_file"
+  151  ls
+  152  touch "${USERNAME}_file"
+  153  ls
+  154  touch "${USERNAME}"
+  155  ls
+  156  echo "Hello   " World ""
+  157  echo Hello   " World "
+  158  echo Hello,world
+  159  echo \\
+  160  vim loop.sh
+  161  sh loop.sh 
+  162  vim loop1.sh
+  163  sh loop.sh 
+  164  sh loop1.sh 
+  165  vi while_loop.sh
+  166  sh while_loop.sh 
+  167  vim infinite_loop.sh
+  168  sh infinite_loop.sh 
+  169  mkdir rc{0,1,2,3,4,5,6,S}.d
+  170  ls
+  171  rmdir ???.d
+  172  ls
+  173  ls -ld {,usr,usr/local}/{bin,sbin,lib}
+  174  history
+  175  ls
+  176  vi
+  177  nano
+  178  vim
+  179  cat /etc/hostname 
+  180  cat /etc/os-release 
+  181  cat /etc/os-release  | grep ID
+  182  ls
+  183  history
+  184  history -d 183
+  185  history > hsitory > git clone https://github.com/fyzLbgx/DevOps_Engineer_internship.git
+  186  ls
+  187  git clone https://github.com/fyzLbgx/DevOps_Engineer_internship.git
+  188  ls
+  189  cd DevOps_Engineer_internship/
+  190  ls
+  191  cd DevOps_Engineer_internship/
+  192  ls
+  193  mkdir Day2_Mon_07_Oct_2026
+  194  ls
+  195  cd Day2_Mon_07_Oct_2026/
+  196  history > Day2_terminal_history.txt
