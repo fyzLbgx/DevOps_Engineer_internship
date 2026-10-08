@@ -1,0 +1,935 @@
+Script started on 2026-10-08 05:40:15+05:30 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+[?2004h]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ whoami
+[?2004lkiosk
+[?2004h]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ wget -[K"[7mhttps://swcarpentry.github.io/shell-novice/data/[27m[7ms[27m[7mhell-lesson-data.zip[27m[A]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ [C[C[C[C[C[Chttps://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip"
+[?2004l--2026-10-08 05:41:52--  https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip
+Resolving swcarpentry.github.io (swcarpentry.github.io)... 2606:50c0:8001::153, 2606:50c0:8002::153, 2606:50c0:8003::153, ...
+Connecting to swcarpentry.github.io (swcarpentry.github.io)|2606:50c0:8001::153|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 460538 (450K) [application/x-zip-compressed]
+Saving to: ‘shell-lesson-data.zip’
+
+shell-lesson-data.z   0%[                    ]       0  --.-KB/s               shell-lesson-data.z 100%[===================>] 449.74K  --.-KB/s    in 0.07s   
+
+2026-10-08 05:41:53 (6.05 MB/s) - ‘shell-lesson-data.zip’ saved [460538/460538]
+
+[?2004h]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ s[Kls
+[?2004l[0m[01;34mDesktop[0m    [01;34mDownloads[0m  my_session.log  [01;34mPublic[0m                 [01;34msnap[0m       [01;34mVideos[0m
+[01;34mDocuments[0m  [01;34mMusic[0m      [01;34mPictures[0m        [01;31mshell-lesson-data.zip[0m  [01;34mTemplates[0m
+[?2004h]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ unip shell-lesson-data.zip [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C> /dev/null 2>&1
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ ls
+[?2004l[0m[01;34mDesktop[0m    [01;34mDownloads[0m  my_session.log  [01;34mPublic[0m                 [01;34msnap[0m       [01;34mVideos[0m
+[01;34mDocuments[0m  [01;34mMusic[0m      [01;34mPictures[0m        [01;31mshell-lesson-data.zip[0m  [01;34mTemplates[0m
+[?2004h]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ lsunip shell-lesson-data.zip > /dev/null 2>&1[1@z
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ ls
+[?2004l[0m[01;34mDesktop[0m    [01;34mMusic[0m           [01;34mPublic[0m                 [01;34msnap[0m
+[01;34mDocuments[0m  my_session.log  [01;34mshell-lesson-data[0m      [01;34mTemplates[0m
+[01;34mDownloads[0m  [01;34mPictures[0m        [01;31mshell-lesson-data.zip[0m  [01;34mVideos[0m
+[?2004h]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ ks
+[?2004lCommand 'ks' not found, but can be installed with:
+sudo apt install qdl
+[?2004h]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ pwd
+[?2004l/home/kiosk
+[?2004h]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ ls - F[1PF
+[?2004l[0m[01;34mDesktop[0m/    [01;34mMusic[0m/          [01;34mPublic[0m/                [01;34msnap[0m/
+[01;34mDocuments[0m/  my_session.log  [01;34mshell-lesson-data[0m/     [01;34mTemplates[0m/
+[01;34mDownloads[0m/  [01;34mPictures[0m/       [01;31mshell-lesson-data.zip[0m  [01;34mVideos[0m/
+[?2004h]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ c[Ks [K[Kls --help
+[?2004lUsage: ls [OPTION]... [FILE]...
+List information about the FILEs (the current directory by default).
+Sort entries alphabetically if none of -cftuvSUX nor --sort is specified.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --all                  do not ignore entries starting with .
+  -A, --almost-all           do not list implied . and ..
+      --author               with -l, print the author of each file
+  -b, --escape               print C-style escapes for nongraphic characters
+      --block-size=SIZE      with -l, scale sizes by SIZE when printing them;
+                             e.g., '--block-size=M'; see SIZE format below
+
+  -B, --ignore-backups       do not list implied entries ending with ~
+  -c                         with -lt: sort by, and show, ctime (time of last
+                             change of file status information);
+                             with -l: show ctime and sort by name;
+                             otherwise: sort by ctime, newest first
+
+  -C                         list entries by columns
+      --color[=WHEN]         color the output WHEN; more info below
+  -d, --directory            list directories themselves, not their contents
+  -D, --dired                generate output designed for Emacs' dired mode
+  -f                         list all entries in directory order
+  -F, --classify[=WHEN]      append indicator (one of */=>@|) to entries WHEN
+      --file-type            likewise, except do not append '*'
+      --format=WORD          across -x, commas -m, horizontal -x, long -l,
+                             single-column -1, verbose -l, vertical -C
+
+      --full-time            like -l --time-style=full-iso
+  -g                         like -l, but do not list owner
+      --group-directories-first
+                             group directories before files;
+                             can be augmented with a --sort option, but any
+                             use of --sort=none (-U) disables grouping
+
+  -G, --no-group             in a long listing, don't print group names
+  -h, --human-readable       with -l and -s, print sizes like 1K 234M 2G etc.
+      --si                   likewise, but use powers of 1000 not 1024
+  -H, --dereference-command-line
+                             follow symbolic links listed on the command line
+      --dereference-command-line-symlink-to-dir
+                             follow each command line symbolic link
+                             that points to a directory
+
+      --hide=PATTERN         do not list implied entries matching shell PATTERN
+                             (overridden by -a or -A)
+
+      --hyperlink[=WHEN]     hyperlink file names WHEN
+      --indicator-style=WORD
+                             append indicator with style WORD to entry names:
+                             none (default), slash (-p),
+                             file-type (--file-type), classify (-F)
+
+  -i, --inode                print the index number of each file
+  -I, --ignore=PATTERN       do not list implied entries matching shell PATTERN
+  -k, --kibibytes            default to 1024-byte blocks for file system usage;
+                             used only with -s and per directory totals
+
+  -l                         use a long listing format
+  -L, --dereference          when showing file information for a symbolic
+                             link, show information for the file the link
+                             references rather than for the link itself
+
+  -m                         fill width with a comma separated list of entries
+  -n, --numeric-uid-gid      like -l, but list numeric user and group IDs
+  -N, --literal              print entry names without quoting
+  -o                         like -l, but do not list group information
+  -p, --indicator-style=slash
+                             append / indicator to directories
+  -q, --hide-control-chars   print ? instead of nongraphic characters
+      --show-control-chars   show nongraphic characters as-is (the default,
+                             unless program is 'ls' and output is a terminal)
+
+  -Q, --quote-name           enclose entry names in double quotes
+      --quoting-style=WORD   use quoting style WORD for entry names:
+                             literal, locale, shell, shell-always,
+                             shell-escape, shell-escape-always, c, escape
+                             (overrides QUOTING_STYLE environment variable)
+
+  -r, --reverse              reverse order while sorting
+  -R, --recursive            list subdirectories recursively
+  -s, --size                 print the allocated size of each file, in blocks
+  -S                         sort by file size, largest first
+      --sort=WORD            sort by WORD instead of name: none (-U), size (-S),
+                             time (-t), version (-v), extension (-X), width
+
+      --time=WORD            select which timestamp used to display or sort;
+                               access time (-u): atime, access, use;
+                               metadata change time (-c): ctime, status;
+                               modified time (default): mtime, modification;
+                               birth time: birth, creation;
+                             with -l, WORD determines which time to show;
+                             with --sort=time, sort by WORD (newest first)
+
+      --time-style=TIME_STYLE
+                             time/date format with -l; see TIME_STYLE below
+  -t                         sort by time, newest first; see --time
+  -T, --tabsize=COLS         assume tab stops at each COLS instead of 8
+  -u                         with -lt: sort by, and show, access time;
+                             with -l: show access time and sort by name;
+                             otherwise: sort by access time, newest first
+
+  -U                         do not sort; list entries in directory order
+  -v                         natural sort of (version) numbers within text
+  -w, --width=COLS           set output width to COLS.  0 means no limit
+  -x                         list entries by lines instead of by columns
+  -X                         sort alphabetically by entry extension
+  -Z, --context              print any security context of each file
+      --zero                 end each output line with NUL, not newline
+  -1                         list one file per line
+      --help        display this help and exit
+      --version     output version information and exit
+
+The SIZE argument is an integer and optional unit (example: 10K is 10*1024).
+Units are K,M,G,T,P,E,Z,Y,R,Q (powers of 1024) or KB,MB,... (powers of 1000).
+Binary prefixes can be used, too: KiB=K, MiB=M, and so on.
+
+The TIME_STYLE argument can be full-iso, long-iso, iso, locale, or +FORMAT.
+FORMAT is interpreted like in date(1).  If FORMAT is FORMAT1<newline>FORMAT2,
+then FORMAT1 applies to non-recent files and FORMAT2 to recent files.
+TIME_STYLE prefixed with 'posix-' takes effect only outside the POSIX locale.
+Also the TIME_STYLE environment variable sets the default style to use.
+
+The WHEN argument defaults to 'always' and can also be 'auto' or 'never'.
+
+Using color to distinguish file types is disabled both by default and
+with --color=never.  With --color=auto, ls emits color codes only when
+standard output is connected to a terminal.  The LS_COLORS environment
+variable can change the settings.  Use the dircolors(1) command to set it.
+
+Exit status:
+ 0  if OK,
+ 1  if minor problems (e.g., cannot access subdirectory),
+ 2  if serious trouble (e.g., cannot access command-line argument).
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation <https://www.gnu.org/software/coreutils/ls>
+or available locally via: info '(coreutils) ls invocation'
+[?2004h]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ hemp [K[K[K[K[Kman --help
+[?2004lUsage: man [OPTION...] [SECTION] PAGE...
+
+  -C, --config-file=FILE     use this user configuration file
+  -d, --debug                emit debugging messages
+  -D, --default              reset all options to their default values
+      --warnings[=WARNINGS]  enable warnings from groff
+
+ Main modes of operation:
+  -f, --whatis               equivalent to whatis
+  -k, --apropos              equivalent to apropos
+  -K, --global-apropos       search for text in all pages
+  -l, --local-file           interpret PAGE argument(s) as local filename(s)
+  -w, --where, --path, --location
+                             print physical location of man page(s)
+  -W, --where-cat, --location-cat
+                             print physical location of cat file(s)
+
+  -c, --catman               used by catman to reformat out of date cat pages
+  -R, --recode=ENCODING      output source page encoded in ENCODING
+
+ Finding manual pages:
+  -L, --locale=LOCALE        define the locale for this particular man search
+  -m, --systems=SYSTEM       use manual pages from other systems
+  -M, --manpath=PATH         set search path for manual pages to PATH
+
+  -S, -s, --sections=LIST    use colon separated section list
+
+  -e, --extension=EXTENSION  limit search to extension type EXTENSION
+
+  -i, --ignore-case          look for pages case-insensitively (default)
+  -I, --match-case           look for pages case-sensitively
+
+      --regex                show all pages matching regex
+      --wildcard             show all pages matching wildcard
+
+      --names-only           make --regex and --wildcard match page names only,
+                             not descriptions
+
+  -a, --all                  find all matching manual pages
+  -u, --update               force a cache consistency check
+
+      --no-subpages          don't try subpages, e.g. 'man foo bar' => 'man
+                             foo-bar'
+
+ Controlling formatted output:
+  -P, --pager=PAGER          use program PAGER to display output
+  -r, --prompt=STRING        provide the `less' pager with a prompt
+
+  -7, --ascii                display ASCII translation of certain latin1 chars
+  -E, --encoding=ENCODING    use selected output encoding
+      --no-hyphenation, --nh turn off hyphenation
+      --no-justification,                              --nj   turn off justification
+  -p, --preprocessor=STRING  STRING indicates which preprocessors to run:
+                             e - [n]eqn, p - pic, t - tbl,
+g - grap, r - refer, v - vgrind
+
+  -t, --troff                use groff to format pages
+  -T, --troff-device[=DEVICE]   use groff with selected device
+
+  -H, --html[=BROWSER]       use www-browser or BROWSER to display HTML output
+  -X, --gxditview[=RESOLUTION]   use groff and display through gxditview
+                             (X11):
+                             -X = -TX75, -X100 = -TX100, -X100-12 = -TX100-12
+  -Z, --ditroff              use groff and force it to produce ditroff
+
+  -?, --help                 give this help list
+      --usage                give a short usage message
+  -V, --version              print program version
+
+Mandatory or optional arguments to long options are also mandatory or optional
+for any corresponding short options.
+
+Report bugs to cjwatson@debian.org.
+[?2004h]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ ha[K[Kman -h
+[?2004lUsage: man [OPTION...] [SECTION] PAGE...
+
+  -C, --config-file=FILE     use this user configuration file
+  -d, --debug                emit debugging messages
+  -D, --default              reset all options to their default values
+      --warnings[=WARNINGS]  enable warnings from groff
+
+ Main modes of operation:
+  -f, --whatis               equivalent to whatis
+  -k, --apropos              equivalent to apropos
+  -K, --global-apropos       search for text in all pages
+  -l, --local-file           interpret PAGE argument(s) as local filename(s)
+  -w, --where, --path, --location
+                             print physical location of man page(s)
+  -W, --where-cat, --location-cat
+                             print physical location of cat file(s)
+
+  -c, --catman               used by catman to reformat out of date cat pages
+  -R, --recode=ENCODING      output source page encoded in ENCODING
+
+ Finding manual pages:
+  -L, --locale=LOCALE        define the locale for this particular man search
+  -m, --systems=SYSTEM       use manual pages from other systems
+  -M, --manpath=PATH         set search path for manual pages to PATH
+
+  -S, -s, --sections=LIST    use colon separated section list
+
+  -e, --extension=EXTENSION  limit search to extension type EXTENSION
+
+  -i, --ignore-case          look for pages case-insensitively (default)
+  -I, --match-case           look for pages case-sensitively
+
+      --regex                show all pages matching regex
+      --wildcard             show all pages matching wildcard
+
+      --names-only           make --regex and --wildcard match page names only,
+                             not descriptions
+
+  -a, --all                  find all matching manual pages
+  -u, --update               force a cache consistency check
+
+      --no-subpages          don't try subpages, e.g. 'man foo bar' => 'man
+                             foo-bar'
+
+ Controlling formatted output:
+  -P, --pager=PAGER          use program PAGER to display output
+  -r, --prompt=STRING        provide the `less' pager with a prompt
+
+  -7, --ascii                display ASCII translation of certain latin1 chars
+  -E, --encoding=ENCODING    use selected output encoding
+      --no-hyphenation, --nh turn off hyphenation
+      --no-justification,                              --nj   turn off justification
+  -p, --preprocessor=STRING  STRING indicates which preprocessors to run:
+                             e - [n]eqn, p - pic, t - tbl,
+g - grap, r - refer, v - vgrind
+
+  -t, --troff                use groff to format pages
+  -T, --troff-device[=DEVICE]   use groff with selected device
+
+  -H, --html[=BROWSER]       use www-browser or BROWSER to display HTML output
+  -X, --gxditview[=RESOLUTION]   use groff and display through gxditview
+                             (X11):
+                             -X = -TX75, -X100 = -TX100, -X100-12 = -TX100-12
+  -Z, --ditroff              use groff and force it to produce ditroff
+
+  -?, --help                 give this help list
+      --usage                give a short usage message
+  -V, --version              print program version
+
+Mandatory or optional arguments to long options are also mandatory or optional
+for any corresponding short options.
+
+Report bugs to cjwatson@debian.org.
+[?2004h]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ man ls
+[?2004l[?1049h[22;0;0t[?1h=[4mLS[24m(1)                            User Commands                           [4mLS[24m(1)[m
+[m
+[1mNAME[0m[m
+       ls - list directory contents[m
+[m
+[1mSYNOPSIS[0m[m
+       [1mls [22m[[4mOPTION[24m]... [[4mFILE[24m]...[m
+[m
+[1mDESCRIPTION[0m[m
+       List  information  about  the FILEs (the current directory by default).[m
+       Sort entries alphabetically if none of [1m-cftuvSUX [22mnor [1m--sort  [22mis  speci‐[m
+       fied.[m
+[m
+       Mandatory  arguments  to  long  options are mandatory for short options[m
+       too.[m
+[m
+       [1m-a[22m, [1m--all[0m[m
+              do not ignore entries starting with .[m
+[m
+       [1m-A[22m, [1m--almost-all[0m[m
+              do not list implied . and ..[m
+[m
+       [1m--author[0m[m
+[7m Manual page ls(1) line 1 (press h for help or q to quit)[27m[K[K[?1l>[?1049l[23;0;0t[?2004h]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ which ls
+[?2004l/usr/bin/ls
+[?2004h]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ ls -F [K[K[K[K[K[Kmkdire [K[K Devops [K[K[K[K[K[K[K[K[K[K[K[K[Kgit cli[Kone [7mhttps://github.com/fayaz960/DevOps_Engineer_[27m[7mi[27m[7mnternship.git[27m[A]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ [C[C[C[C[C[C[C[C[C[Chttps://github.com/fayaz960/DevOps_Engineer_internship.git
+[?2004lCloning into 'DevOps_Engineer_internship'...
+warning: You appear to have cloned an empty repository.
+[?2004h]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ ls
+[?2004l[0m[01;34mDesktop[0m                     [01;34mMusic[0m           [01;34mshell-lesson-data[0m      [01;34mVideos[0m
+[01;34mDevOps_Engineer_internship[0m  my_session.log  [01;31mshell-lesson-data.zip[0m
+[01;34mDocuments[0m                   [01;34mPictures[0m        [01;34msnap[0m
+[01;34mDownloads[0m                   [01;34mPublic[0m          [01;34mTemplates[0m
+[?2004h]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ cd De
+Desktop/                    DevOps_Engineer_internship/
+]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ cd DevOps_Engineer_internship/
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship[00m$ mkdi [K[K[K[K[KM[Kmkdie [K[Ke [K[Kr [K[K[K[K[K[KMKD[K[K[Knkdi[K[K[K[Kmkdir Week1_Day1[C[C[1P_Day1[1P_Day1[1P_Day1[1P_Day1[1P_Day1M_Day1o_Day1n_Day1[C[C[C[C[C[K[K[K[Kgh[K[K6[K06_Oct_2026DMon_06_Oct_2026aMon_06_Oct_2026yMon_06_Oct_20262Mon_06_Oct_2026[1PMon_06_Oct_20261Mon_06_Oct_2026_Mon_06_Oct_2026
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship[00m$ cd Day1_Mon_06_Oct_2026/
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[00m$ cp ~.[K/s hell-lesson-data .[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C ~/s[1@h[A]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[00m$ [C[C[C- ~/[1@s[A]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[00m$ [C[C[C[Ci ~[1@/[A]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[00m$ [C[C[C[C[Cr [1@~
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[00m$ ls
+[?2004l[0m[01;34mshell-lesson-data[0m
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[00m$ l [Ks -F  shell-lesson-data/
+[?2004l[0m[01;34mexercise-data[0m/  [01;34mnorth-pacific-gyre[0m/
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[00m$ cd ..
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship[00m$ cd 
+Day1_Mon_06_Oct_2026/ .git/                 
+]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship[00m$ cd Day1_Mon_06_Oct_2026/
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[00m$ ls [K[K[Kcp -r  [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[Kmkdier  [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[Kls Ds[K[K[K[K[Kls
+[?2004l[0m[01;34mshell-lesson-data[0m
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[00m$ cpm -[K[K[K -r  shell-lesson-data/ DE[K[K../../DE[K[K
+.bash_history
+.bash_logout
+.bashrc
+.cache/
+.config/
+Desktop/
+DevOps_Engineer_internship/
+Documents/
+Downloads/
+.gnupg/
+.kube/
+.lesshst
+.local/
+.minikube/
+Music/
+my_session.log
+.npm/
+Pictures/
+.profile
+Public/
+.selected_editor
+shell-lesson-data/
+shell-lesson-data.zip
+--More--[K]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[00m$ cp -r shell-lesson-data/ ../../Desktop/
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[00m$ cd ~
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ cd -
+[?2004l/home/kiosk/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[00m$ mkdir  tests[Kdir
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[00m$ rmdir  testdir/
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[00m$ cat cr ete [K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[Kecgho  [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[Kho : hellow[K testfile[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C:he[1P[A]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[00m$ [C[C[C[C[C=h[1@e[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Che[1P[A]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[00m$ [C[C[C[C[Chel[C[1P[A]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[00m$ [C[C[C[C he[C[1@l[A]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[00m$ [C[C[C[C[C"h[1@e[C[C[C[C[C[C[C[C[C[C[C[C[C[C" ?[K> testfile
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[00m$ vat [K[K[K[Kcat te stfile 
+[?2004lhello testfile
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[00m$ cd ex[K[Kshell-lesson-data/exercise-data/creatures/
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[00m$ cd -
+[?2004l/home/kiosk/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026[00m$ cd -
+[?2004l/home/kiosk/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[00m$ cd /
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: /[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m/[00m$ cd -
+[?2004l/home/kiosk/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[00m$ cd /j[Khome/kiosk/
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ cd -
+[?2004l/home/kiosk/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[00m$ cd ../../
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data[00m$ cd -
+[?2004l/home/kiosk/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[00m$ cd ~
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ cd .[K-
+[?2004l/home/kiosk/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[00m$ [7mls -r -F /Users/backup[27mls -r -F /Users/backup[K[K[K[K[K[K[K[K[K[K[K[K[K[K .
+[?2004lunicorn.dat  minotaur.dat  basilisk.dat
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[00m$ ls -r -F ../
+[?2004l[0m[01;34mwriting[0m/  numbers.txt  [01;34mcreatures[0m/  [01;34manimal-counts[0m/  [01;34malkanes[0m/
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[00m$ which rmdir
+[?2004l/usr/bin/rmdir
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[00m$ typ [Ke rmdir
+[?2004lrmdir is hashed (/usr/bin/rmdir)
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[00m$ type rmdir[C[K[K[K
+[?2004lrm is /usr/bin/rm
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[00m$ type rmdir
+[?2004lrmdir is hashed (/usr/bin/rmdir)
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[00m$ type rmdir[Kdir[K[K[K
+[?2004lrm is /usr/bin/rm
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[00m$ less /etc/[K[K[K[Kh[Ketc/s[K[K[K[K[K[K[K[K[K[K[Kless 
+basilisk.dat  minotaur.dat  unicorn.dat   
+]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[00m$ less unicorn.dat 
+[?2004l[?1049h[22;0;0t[?1h=COMMON NAME: unicorn
+CLASSIFICATION: equus monoceros
+UPDATED: 1738-11-24
+AGCCGGGTCG
+CTTTACCTTA
+AAGCCGAGGG
+GGGTGGTACG
+CCGAACATAA
+ACGCTTTAAC
+GTCCCTCCAG
+GCTGATAATC
+GTTTAAGCAC
+ACGTGGTCTA
+GAGTTGCGCT
+TACCGGACAA
+ACCTGCGCGT
+TGAAAGGGTT
+ACGCCTGGTA
+CGAAATAAGA
+CGAACCCCAG
+GACCCAGCAG
+ACAAAGGAAC
+GTGCTAGGCC
+[7municorn.dat[27m[K[K[?1l>[?1049l[23;0;0t[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[00m$ tail 
+basilisk.dat  minotaur.dat  unicorn.dat   
+]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[00m$ tail basilisk.dat 
+[?2004lTCAACTGCTC
+GAACTACTCG
+CCAAAACACT
+TTCGACTAGG
+CGATCGACCA
+AGAAAAGAGA
+CTGGACTGCT
+TACAGAGGTT
+TGAACTTTAC
+CGCGCCCACC
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[00m$ tail basilisk.dat [1@-[1@n[1@ [1@5[1@ 
+[?2004lAGAAAAGAGA
+CTGGACTGCT
+TACAGAGGTT
+TGAACTTTAC
+CGCGCCCACC
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[00m$ tail -n 5 basilisk.dat [C[1P[1P[1P[1P[1@h[1@e[1@a[1@d
+[?2004lCOMMON NAME: basilisk
+CLASSIFICATION: basiliscus vulgaris
+UPDATED: 1745-05-02
+CCCCAACGAG
+GAAACAGATC
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[00m$ head -n 5 basilisk.dat [Kmore basilisk.dat 
+[?2004lCOMMON NAME: basilisk
+CLASSIFICATION: basiliscus vulgaris
+UPDATED: 1745-05-02
+CCCCAACGAG
+GAAACAGATC
+ATTAGAAGAT
+CTGTCGCGAA
+CCGCACCTCT
+CCTATCTACA
+TGTTTGTCTC
+TGGGTGGGGA
+TCCATAGGCA
+GCATTACCAG
+CACCCTACGA
+TAAGGACTTC
+CGTCAGAGAT
+TTCCTGGTAT
+TATACAGCTC
+CTAGTGTTAT
+CCAGTTTGTG
+TCGTCCCATA
+GCCAGCAAGA
+GCCAAACAAA
+[7m--More--(16%)[27m[K[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data/creatures[00m$ ech[K[K[Kmkd[K[K[Kt[Kcd ..
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[00m$ ls
+[?2004l[0m[01;34malkanes[0m  [01;34manimal-counts[0m  [01;34mcreatures[0m  numbers.txt  [01;34mwriting[0m
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[00m$ vim numbers.txt 
+[?2004l[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;24r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[24;1H"numbers.txt" 5L, 13B[2;1H▽[6n[2;1H  [3;1HPzz\[0%m[6n[3;1H           [1;1H[>c]10;?]11;?[1;1H10
+2[2;2H[K[3;1H19[3;3H[K[4;1H22
+6
+[94m~                                                                               [7;1H~                                                                               [8;1H~                                                                               [9;1H~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [m[24;63H1,1[11CAll[1;1H[?25h[?4mP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\P$q q\[?12$p[?25l[24;53H0[1;1H[24;54H3[1;1H[24;55H0[1;1H[24;56H/[1;1H[24;57H0[1;1H[24;58Ha[1;1H[24;59H0[1;1H[24;60Ha[1;1H[24;61H/[1;1H[24;62H2[1;1H[24;53H          [1;1H[27m[23m[29m[m[H[2J[1;1H10
+2
+19
+22
+6
+[94m~                                                                               [7;1H~                                                                               [8;1H~                                                                               [9;1H~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [m[24;63H1,1[11CAll"numbers.txt" 5L, 13B[1;1H[?25h[?25l[24;53H^[[1;1H[24;53H  [1;1H[24;53H^[[1;1H[24;53H  [1;1H[?25h[?25l[24;53H:[1;1H[24;1H[K[24;1H:[?25hq[?25l[?2004l[>4;m[23;2t[23;1t[24;1H[K[24;1H[?1004l[?2004l[?1l>[?1049l[23;0;0t[?25h[>4;m[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[00m$ cat numbers.txt 
+[?2004l10
+2
+19
+22
+6
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[00m$ excg[K[K[Kcho numbers.txt 
+[?2004lnumbers.txt
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[00m$ vim numbers.txt 
+[?2004l[?1049h[22;0;0t[>4;2m[?1h=[?2004h[?1004h[1;24r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[24;1H"numbers.txt" 5L, 13B[2;1H▽[6n[2;1H  [3;1HPzz\[0%m[6n[3;1H           [1;1H[>c]10;?]11;?[1;1H10
+2[2;2H[K[3;1H19[3;3H[K[4;1H22
+6
+[94m~                                                                               [7;1H~                                                                               [8;1H~                                                                               [9;1H~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [m[24;63H1,1[11CAll[1;1H[?25h[?4mP+q436f\P+q6b75\P+q6b64\P+q6b72\P+q6b6c\P+q2332\P+q2334\P+q2569\P+q2a37\P+q6b31\P$q q\[?12$p[?25l[24;53H:[1;1H[24;54H3[1;1H[24;55H0[1;1H[24;56H3[1;1H[24;57H0[1;1H[24;58H/[1;1H[24;59H0[1;1H[24;60Ha[1;1H[24;61H0[1;1H[24;62Ha[1;1H[24;53H          [1;1H[27m[23m[29m[m[H[2J[1;1H10
+2
+19
+22
+6
+[94m~                                                                               [7;1H~                                                                               [8;1H~                                                                               [9;1H~                                                                               [10;1H~                                                                               [11;1H~                                                                               [12;1H~                                                                               [13;1H~                                                                               [14;1H~                                                                               [15;1H~                                                                               [16;1H~                                                                               [17;1H~                                                                               [18;1H~                                                                               [19;1H~                                                                               [20;1H~                                                                               [21;1H~                                                                               [22;1H~                                                                               [23;1H~                                                                               [m[24;63H1,1[11CAll"numbers.txt" 5L, 13B[1;1H[?25h[?25l[24;53H:[1;1H[24;1H[K[24;1H:[?25hq[?25l[?2004l[>4;m[23;2t[23;1t[24;1H[K[24;1H[?1004l[?2004l[?1l>[?1049l[23;0;0t[?25h[>4;m[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[00m$ echo "hi"
+[?2004lhi
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[00m$ type echo
+[?2004lecho is a shell builtin
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[00m$ mkdir -p /gi[K[K[Khi[K[Khello/ho[K[Khi
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[00m$ rm [Kdir hello/
+[?2004lrmdir: failed to remove 'hello/': Directory not empty
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[00m$ rmdir hello/[C[1P hello/[1P hello/[1P hello/[C hello/- hello/f hello/[1P hello/r hello/f hello/
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[00m$ [K[A[K]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[00m$ [K[A[K]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[00m$ [K[A[K]0;kiosk@kiosk-VirtualBox: ~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/DevOps_Engineer_internship/Day1_Mon_06_Oct_2026/shell-lesson-data/exercise-data[00m$ [7mmkdir [27m[7m-[27m[7mp ~/wildcard_practice && cd ~/wildcard_practice && touc[27m[7mh[27m[7m file1.txt file2.txt file3.txt photo.jpg photo.png docu[27m[7mm[27m[7ment.pdf logs.log testA.txt testB.txt[27m[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[Cmkdir -p ~/wildcard_practice && cd ~/wildcard_practice && touch file1.txt file2.txt file3.txt photo.jpg photo.png document.pdf logs.log testA.txt testB.txt
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~/wildcard_practice[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/wildcard_practice[00m$ ls *.txt
+[?2004lfile1.txt  file2.txt  file3.txt  testA.txt  testB.txt
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/wildcard_practice[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/wildcard_practice[00m$ ls file?.txt [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kt
+[?2004lfile1.txt  file2.txt  file3.txt
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/wildcard_practice[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/wildcard_practice[00m$ ls file  ^?[K[K[K[]1]2][1P]3][C. txt
+[?2004lfile1.txt  file3.txt
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/wildcard_practice[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/wildcard_practice[00m$ [K]0;kiosk@kiosk-VirtualBox: ~/wildcard_practice[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/wildcard_practice[00m$ [K]0;kiosk@kiosk-VirtualBox: ~/wildcard_practice[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/wildcard_practice[00m$ [K]0;kiosk@kiosk-VirtualBox: ~/wildcard_practice[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/wildcard_practice[00m$ wc [K[K[Kcd ..
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ cd 
+.cache/                     Music/
+.config/                    .npm/
+Desktop/                    Pictures/
+DevOps_Engineer_internship/ Public/
+Documents/                  shell-lesson-data/
+Downloads/                  snap/
+.gnupg/                     .ssh/
+.kube/                      Templates/
+.local/                     Videos/
+.minikube/                  wildcard_practice/
+]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ cd shell-lesson-data/c[K
+exercise-data/      north-pacific-gyre/ 
+]0;kiosk@kiosk-VirtualBox: ~[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~[00m$ cd shell-lesson-data/north-pacific-gyre/
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~/shell-lesson-data/north-pacific-gyre[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ wc 
+goodiff.sh      NENE01751A.txt  NENE01971Z.txt  NENE02040B.txt
+goostats.sh     NENE01751B.txt  NENE01978A.txt  NENE02040Z.txt
+NENE01729A.txt  NENE01812A.txt  NENE01978B.txt  NENE02043A.txt
+NENE01729B.txt  NENE01843A.txt  NENE02018B.txt  NENE02043B.txt
+NENE01736A.txt  NENE01843B.txt  NENE02040A.txt  
+]0;kiosk@kiosk-VirtualBox: ~/shell-lesson-data/north-pacific-gyre[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ wc NENE01736A.txt 
+[?2004l 300  300 4371 NENE01736A.txt
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/shell-lesson-data/north-pacific-gyre[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ wc +[K* .
+[?2004l     29      96     519 goodiff.sh
+     26     123     621 goostats.sh
+    300     300    4406 NENE01729A.txt
+    300     300    4400 NENE01729B.txt
+    300     300    4371 NENE01736A.txt
+    300     300    4411 NENE01751A.txt
+    300     300    4409 NENE01751B.txt
+    300     300    4401 NENE01812A.txt
+    300     300    4395 NENE01843A.txt
+    300     300    4375 NENE01843B.txt
+    300     300    4372 NENE01971Z.txt
+    300     300    4381 NENE01978A.txt
+    300     300    4389 NENE01978B.txt
+    240     240    3517 NENE02018B.txt
+    300     300    4391 NENE02040A.txt
+    300     300    4367 NENE02040B.txt
+    300     300    4381 NENE02040Z.txt
+    300     300    4386 NENE02043A.txt
+    300     300    4393 NENE02043B.txt
+wc: .: Is a directory
+      0       0       0 .
+   5095    5259   74885 total
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/shell-lesson-data/north-pacific-gyre[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ d[Ksort -n NENE0200[K4
+NENE02040A.txt  NENE02040Z.txt  NENE02043B.txt  
+NENE02040B.txt  NENE02043A.txt  
+]0;kiosk@kiosk-VirtualBox: ~/shell-lesson-data/north-pacific-gyre[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ sort -n NENE02043 B.txt 
+[?2004l0.0071650810371
+0.00825024007254
+0.0137722202111
+0.0141635389403
+0.0167525945903
+0.0244952332378
+0.0250446489431
+0.0276654742094
+0.0315034392961
+0.0325892144681
+0.0422519345549
+0.0443766369993
+0.0446430615058
+0.0502787328516
+0.0503731835245
+0.0540684878978
+0.0639992658966
+0.0665784217587
+0.0697651858916
+0.0886673863188
+0.0961813095372
+0.0974379427283
+0.0993238150929
+0.101540165735
+0.102205218111
+0.110276608757
+0.111002549027
+0.119417559691
+0.125609500102
+0.126372958151
+0.126543070338
+0.130708932131
+0.132628372359
+0.134692466604
+0.136437630081
+0.138311770642
+0.138696226489
+0.143909497448
+0.145454006724
+0.146594122376
+0.146684556839
+0.151874197924
+0.164155666087
+0.164807203007
+0.166346137907
+0.171133268575
+0.172956533789
+0.176637404106
+0.18134434788
+0.187098169939
+0.189223856307
+0.189389256872
+0.190049030743
+0.197542575927
+0.202325047412
+0.213349031558
+0.21403283221
+0.217150656022
+0.223218343338
+0.226373126648
+0.231367385089
+0.235953310775
+0.236315186145
+0.240422024506
+0.25569430643
+0.258926898456
+0.259578718278
+0.269182652059
+0.274069227001
+0.274132383562
+0.275112113398
+0.279178197844
+0.280391143701
+0.284048154882
+0.287987436742
+0.288178506753
+0.292516398129
+0.292550123321
+0.294360580485
+0.29534925322
+0.296024465133
+0.303468017086
+0.304226588353
+0.313288260672
+0.318369659844
+0.321826454561
+0.327336354111
+0.330421844819
+0.331826280949
+0.335983558234
+0.337887158976
+0.338025153428
+0.338540122038
+0.342168970265
+0.349781458085
+0.350566915345
+0.352815143952
+0.357244231411
+0.358605096699
+0.35885012102
+0.359973684411
+0.364452763081
+0.365384538352
+0.36568732779
+0.378628952491
+0.40351508175
+0.40757043034
+0.410711191315
+0.41492473377
+0.418983619382
+0.419909225748
+0.421897840681
+0.434242873056
+0.435484073922
+0.439544621744
+0.441239350129
+0.447061947855
+0.448391885688
+0.452432431694
+0.462886698198
+0.464248911874
+0.464808562689
+0.478613804175
+0.482563505348
+0.488255594108
+0.505015858375
+0.509689826294
+0.510453257184
+0.511951208962
+0.514312508584
+0.516548358651
+0.524355940743
+0.528946263145
+0.530304950467
+0.535827335918
+0.540305596865
+0.540984436104
+0.553079397906
+0.554924374057
+0.571934259318
+0.590598568875
+0.592495316037
+0.599002321893
+0.603511921496
+0.620547766431
+0.629109638906
+0.629201664281
+0.629913527761
+0.630631774702
+0.633700488921
+0.640546056349
+0.645266555632
+0.650122374709
+0.653180002644
+0.654429487146
+0.658920383835
+0.668775150248
+0.675409469575
+0.695291954579
+0.703576720591
+0.713572649606
+0.721478833682
+0.733472463068
+0.740744169335
+0.754501213748
+0.756003859439
+0.764114715697
+0.78562075332
+0.797661447678
+0.808982307984
+0.810847601389
+0.818079016462
+0.81893928907
+0.823417983512
+0.832650567965
+0.837327724372
+0.845918646017
+0.858807385596
+0.858920823381
+0.890388422986
+0.930062344689
+0.942977772278
+0.951680999935
+0.961712363154
+0.9677137297
+0.974929407338
+0.982953194226
+0.9947510512
+0.996404724602
+0.998382613685
+0.999161265886
+0.999620092536
+1.02268897721
+1.04445285771
+1.06775534167
+1.07096390562
+1.07487919281
+1.07650537138
+1.09653434027
+1.1015894039
+1.10362471382
+1.1049160457
+1.10801878498
+1.11211830289
+1.11291231281
+1.12818073754
+1.12922575877
+1.13374289795
+1.13390057792
+1.13996677427
+1.14600466962
+1.15402044922
+1.16592904918
+1.1746170564
+1.19167603588
+1.19317551638
+1.19733879175
+1.22329440475
+1.23904829548
+1.24188326571
+1.2583571488
+1.2618065804
+1.26636679508
+1.26931814805
+1.28133002133
+1.31185446922
+1.38090540588
+1.40236142038
+1.4078383223
+1.41896424769
+1.4355224035
+1.43763631748
+1.44555980801
+1.44594973312
+1.45917131497
+1.46906557714
+1.47609704256
+1.48995467333
+1.49587244581
+1.50194600159
+1.50649274183
+1.53383383852
+1.54070085242
+1.54820541135
+1.55064375675
+1.55810789107
+1.57340737067
+1.58536620094
+1.59362737151
+1.60784835341
+1.61622414602
+1.64016421256
+1.65083097981
+1.67628863456
+1.68923092154
+1.71196529005
+1.72291237463
+1.72564202165
+1.79580843766
+1.8126612174
+1.83008930566
+1.87792474241
+1.89871966596
+1.90029053444
+1.90223568232
+1.92241375895
+1.92407638924
+1.94219483894
+2.00891385756
+2.03311834713
+2.03452436236
+2.06923871458
+2.13584839518
+2.15780510742
+2.18169699671
+2.20561413908
+2.21484863876
+2.23533150184
+2.24395276286
+2.46336526449
+2.51482559981
+2.57671500169
+2.63945693795
+2.66360718231
+2.77611457364
+2.87260237399
+3.10810675689
+3.51262468588
+3.52805137201
+3.77409326155
+3.78656952356
+3.85188179948
+3.88044189392
+4.13021485518
+4.15151148453
+4.16877474336
+4.40840134091
+4.47805321448
+4.84676247608
+4.96115978336
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/shell-lesson-data/north-pacific-gyre[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ sort -o n NENE02043B.txt [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C NENE02043B.[1P[A]0;kiosk@kiosk-VirtualBox: ~/shell-lesson-data/north-pacific-gyre[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ [C[C[C[C[C[Co NENE02043B[1@.[A]0;kiosk@kiosk-VirtualBox: ~/shell-lesson-data/north-pacific-gyre[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ [C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CNENE02043B.txt ? [K[K> sorted file.txt[C[1Pfile.txt_file.txt
+[?2004l^[[A^[[B        ^C
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/shell-lesson-data/north-pacific-gyre[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ [7msort NENE02043B.t[27m[7mx[27m[7mt > sorted_file.txt[27m[A]0;kiosk@kiosk-VirtualBox: ~/shell-lesson-data/north-pacific-gyre[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ sort NENE02043B.txt > sorted_file.txt
+[?2004l[?2004h]0;kiosk@kiosk-VirtualBox: ~/shell-lesson-data/north-pacific-gyre[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ [K]0;kiosk@kiosk-VirtualBox: ~/shell-lesson-data/north-pacific-gyre[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ grep [7m4.84676247608[27m4.84676247608 NENE02043
+NENE02043A.txt  NENE02043B.txt  
+]0;kiosk@kiosk-VirtualBox: ~/shell-lesson-data/north-pacific-gyre[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ grep 4.84676247608 NENE02043B.txt 
+[?2004l[01;31m[K4.84676247608[m[K
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/shell-lesson-data/north-pacific-gyre[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ grep 4.84676247608 NENE02043B.txt [C[C[1@-[1@a[1@3[1P[1@A[1@ 
+[?2004lgrep: 34.84676247608: invalid context length argument
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/shell-lesson-data/north-pacific-gyre[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ grep -A 34.84676247608 NENE02043B.txt [1@ 
+[?2004l[01;31m[K4.84676247608[m[K
+0.653180002644
+1.53383383852
+1.72564202165
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/shell-lesson-data/north-pacific-gyre[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ grep -A 3 4.84676247608 NENE02043B.txt [1P[1@b[1P[1@B
+[?2004l0.832650567965
+0.280391143701
+0.620547766431
+[01;31m[K4.84676247608[m[K
+[?2004h]0;kiosk@kiosk-VirtualBox: ~/shell-lesson-data/north-pacific-gyre[01;32mkiosk@kiosk-VirtualBox[00m:[01;34m~/shell-lesson-data/north-pacific-gyre[00m$ grep -B 3 4.84676247608 NENE02043B.txt [C[C[C[C[C[C[C[C[C[C[C\[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ki [31@A 3 4.84676247608 NENE02043B.txt[C[C[C[C[C[C[C[C[C[C[C[C[C[Ci [K[Kexit
+[?2004lexit
+
+Script done on 2026-10-08 08:35:11+05:30 [COMMAND_EXIT_CODE="0"]

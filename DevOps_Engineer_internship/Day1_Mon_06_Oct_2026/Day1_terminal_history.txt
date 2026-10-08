@@ -1,0 +1,107 @@
+    1  ls
+    2  script my_session.log
+    3  ls
+    4  vim my_session.log 
+    5  ls
+    6  cd DevOps_Engineer_internship/
+    7  ls
+    8  ls -a
+    9  git add .
+   10  cd Day1_Mon_06_Oct_2026/
+   11  ls
+   12  rm -rf shell-lesson-data/
+   13  rm testfile 
+   14  cp ~/my_session.log .
+   15  history > Day1_terminal_history.txt
+   16  mv my_session.log Day1-my-session.log
+   17  ls
+   18  more Day1_terminal_history.txt 
+   19  vim  Day1_terminal_history.txt 
+   20  history -r
+   21  ls
+   22  whoami
+   23  wget "https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip"
+   24  ls
+   25  unip shell-lesson-data.zip > /dev/null 2>&1
+   26  ls
+   27  unzip shell-lesson-data.zip > /dev/null 2>&1
+   28  ls
+   29  ks
+   30  pwd
+   31  ls -F
+   32  ls --help
+   33  man --help
+   34  man -h
+   35  man ls
+   36  which ls
+   37  git clone https://github.com/fayaz960/DevOps_Engineer_internship.git
+   38  ls
+   39  cd DevOps_Engineer_internship/
+   40  mkdir Day1_Mon_06_Oct_2026
+   41  cd Day1_Mon_06_Oct_2026/
+   42  cp -ir ~/shell-lesson-data .
+   43  ls
+   44  ls -F shell-lesson-data/
+   45  cd ..
+   46  cd Day1_Mon_06_Oct_2026/
+   47  ls
+   48  cp -r shell-lesson-data/ ../../Desktop/
+   49  cd ~
+   50  cd -
+   51  mkdir testdir
+   52  rmdir testdir/
+   53  echo "hello testfile" > testfile
+   54  cat testfile 
+   55  cd shell-lesson-data/exercise-data/creatures/
+   56  cd -
+   57  cd /
+   58  cd -
+   59  cd /home/kiosk/
+   60  cd -
+   61  cd ../../
+   62  cd -
+   63  cd ~
+   64  cd -
+   65  ls -r -F .
+   66  ls -r -F ../
+   67  which rmdir
+   68  type rmdir
+   69  type rm
+   70  type rmdir
+   71  type rm
+   72  less unicorn.dat 
+   73  tail basilisk.dat 
+   74  tail -n 5 basilisk.dat 
+   75  head -n 5 basilisk.dat 
+   76  more basilisk.dat 
+   77  cd ..
+   78  ls
+   79  vim numbers.txt 
+   80  cat numbers.txt 
+   81  echo numbers.txt 
+   82  vim numbers.txt 
+   83  echo "hi"
+   84  type echo
+   85  mkdir -p hello/hi
+   86  rmdir hello/
+   87  rm -rf hello/
+   88  mkdir -p ~/wildcard_practice && cd ~/wildcard_practice && touch file1.txt file2.txt file3.txt photo.jpg photo.png document.pdf logs.log testA.txt testB.txt
+   89  ls *.txt
+   90  ls file?.txt
+   91  ls file[13].txt
+   92  cd ..
+   93  cd shell-lesson-data/north-pacific-gyre/
+   94  wc NENE01736A.txt 
+   95  wc * .
+   96  sort -n NENE02043B.txt 
+   97  sort -o NENE02043B.txt > sorted_file.txt
+   98  sort NENE02043B.txt > sorted_file.txt
+   99  grep 4.84676247608 NENE02043B.txt 
+  100  grep -A 34.84676247608 NENE02043B.txt 
+  101  grep -A 3 4.84676247608 NENE02043B.txt 
+  102  grep -i 
+  103  exit
+  104  ls
+  105  history > Day1_terminal_history.tx
+  106  ls
+  107  history > Day1_terminal_history.tx

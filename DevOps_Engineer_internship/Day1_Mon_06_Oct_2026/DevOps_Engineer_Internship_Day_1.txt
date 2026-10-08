@@ -1,0 +1,116 @@
+DevOps Engineer Internship Day 1 
+
+ls - To list files
+  -F - lists files and folders while adding special symbols to the end of their names to show what kind of items they are
+  -a show hiden files
+  -l - long list
+  -h - show human readable size
+  -R - list subdirectory recursive
+
+
+--help - A built-in utility in shell environments (like Bash) used to display information and documentation specifically for shell built-in commands
+
+cp -  copy command 
+  -r - to copy recursivery
+  -i - ask before doing copy action
+  -v - show verbose 
+
+cd .. - for going one directory back
+  cd ~ - go to home dir 
+  cd - go back to previos dir
+
+mkdir - make a new directory
+  -p - crete parent directory if it not exist
+
+touch - crete a new empty file
+
+rm - remove a file 
+ -f - force remove 
+ -i - ask before removal
+ -r - remove recursive
+ rm -rf - commonly used to for remove (but need to be careful)
+
+rmdir - remove a directory if its empty
+
+cat - output contents of a file
+
+less - view a file allow biderectional navigation 
+
+more - view a file but only allow forward navigation only
+
+tail - show last 10 lines
+ -n 5 -  5 means show 5 lines insted of default 10 we can adjust it as needed 
+head - show firest 10 line 
+ -n 2 - show first 2 lines insted of default 10
+
+
+echo - print text  or variables to screen
+
+vim and nano  - no gui text edior
+   to open a file with vim or nan we type vim or nano follwed by that file name otherwise it will open a new blank file
+nano 
+  ctrl + o - save
+  ctrl + x - exit 
+  ctrl + k - cut 
+  ctrl + u - paste
+  ctrl + w - search inside the file
+
+vim
+  i - intractive mode which allow user to type normally 
+  esc - switch back to comamnd mode which vim open by default after launching 
+  :w - for saving file contents
+  :q - for exiting (only work if file is saved first)
+  :wq - most used vim command combine both saviing and quitting. (shift zz also work)
+  :q! - quit without saving
+  dd - cut current line
+  yy - copy current line 
+  x - delete single charcter where the cursor is action
+  G - jump to very last line
+  gg - jump to very fiest line of the file
+   / - search inside the file 
+
+
+commonly used wildcards 
+*  - matches zero or more characters for eg *.txt matches all etst files 
+? - match single character  for eg 
+[] - matches one charcter inside teh bracket
+[a-z] - matches in a range 
+
+
+in linux . is current working directory ..  is previos directory , ~ is home , - previos working diectoey
+very easy to toggle back and forth and / is root directory
+
+Relative path and absolute path 
+absolute path start from root directory relative path is a shortcut relative to current folder user is at in scripts betetr to 
+use absulte path
+
+
+wc - word count 
+ options are l m and w 
+kiosk@kiosk-VirtualBox:~/shell-lesson-data/north-pacific-gyre$ wc NENE01736A.txt 
+ 300  300 4371 NENE01736A.txt
+in this example 
+300 number of lines 
+300 characters
+1158 words
+
+sort - sort in a specific order 
+  -n - Sort numerically
+  -r - sort in reverse order
+  -f - treatupper an lower case the same way
+  -o filename  - wite sotred to a file 
+
+
+grep search specific words or patterns insiede test file 
+  -i - igniorre case
+  -v - match invert 
+  -A 3 - show 3 lines after the match also along with matched line 
+  -b2 - print 2 liens before match including the matched line
+  -E - open posibilty to use a lot of complex alow regex and pattern matching 
+
+
+
+
+
+
+
