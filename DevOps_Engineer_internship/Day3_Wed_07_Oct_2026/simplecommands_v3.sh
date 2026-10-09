@@ -8,6 +8,10 @@
 #
 # Verion: v3
 #
+#
+#putting date name and version in ascript is good practice 
+
+
 set -x #we can actaully see the command that is running along with its out in debug mode
 
 
