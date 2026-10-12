@@ -1,0 +1,50 @@
+What is DNS(Domain name system)
+-------------------------------
+
+computers talk through ip adressses and dns or domaain name system is kind of like a phonebook that translate human readable domain name in to ip adresses 
+
+when we tyte a domain name in browser for eg to finding ts ip adresses take a entire journey with so many systems in the middle. first is local cache if it can find ip from local cache saved by browser or at os level or even at isp sever etc it can resolve quickly. othewise recrsive resolver usually maagedby isp or extrenal companies liek google or cloudflare has to query teh root server then when root server return the root server name back to recursive resolver it again queries top level domain name server with it then tld return authoritative nameserver which holds the actual ip adress for that specific domain retuen the ip the ip adresss is finally send back to recursive resolved it hand it over to browser then browser establish a connection using the ip adress with the server.
+
+
+
+Record types 
+------------
+
+A - ipv4
+
+AAAA - ipv6
+
+NS - nameserver 
+
+mx - mail server
+
+---------------
+Dig and nslookup
+---------------
+
+Both tools are used to lookup dns records. both ask dns server what is the record for this name liek a aaa ns etc
+
++trace show full path from root servers all teh way down 
+
+ns lookup shows short summary unlike dig which show lot more ino 
+
+
+curl is used to ask webserver for a page. curl -I is used to ask for ehaders only 
+curl -v show more verbose. it show status codes which can be used to identity doffent things like sucess redirects clent and server side errors etc. The five groups of status codes are 1xx, 2xx, 3xx, 4xx, 5xx
+
+
+what i understand from using dig and curl is that labgex resolves to cloudflare ip so real server ip is not exposed. cloudflare managing labgex dns. email of labgexe is handled by zoho 
+
+-----------
+Subnet Mask
+------------
+subnet mask tell us where the slip btw network and host part happen.
+if we take a common ipv4 adress. lets say 192.168.1.10 with sunet mask of 255.255.255.0 or in cidr notation 192.168.1.10/24
+
+192.168.1 is network part and 10 is host part
+
+/24 means first 24 bits out of 32 go to network which caluclates to around 2^24 or 16,777,216 networks 
+and remaining 8 bits calculates to 2^8 around 254 host deviecs
+
+fiest adress in subnet is network and last one is broadcast 
+

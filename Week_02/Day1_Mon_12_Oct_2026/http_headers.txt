@@ -1,0 +1,13 @@
+HTTP/2 301 
+date: Mon, 12 Oct 2026 11:50:09 GMT
+content-type: text/html; charset=iso-8859-1
+location: https://www.labgex.com/
+server: cloudflare
+x-frame-options: SAMEORIGIN
+content-security-policy: frame-ancestors 'self';
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+cf-cache-status: DYNAMIC
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=qwCyLhlGg4cWbMt8mJ%2BLih7h6T8%2Fe8u5T5Ki1r%2FGCe6roZUlDRo7%2FOirOiIg3uVT67gq1YaTPiKudYIBIAufpsaFaJJ4WKyS6Qn%2Fo7KLpB%2FgIrxrQ28Sv80D867t"}]}
+cf-ray: a495e2a2bf6b8f57-IAD
+alt-svc: h3=":443"; ma=86400
+

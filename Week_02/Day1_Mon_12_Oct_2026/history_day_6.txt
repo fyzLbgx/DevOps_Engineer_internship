@@ -1,0 +1,81 @@
+    1  clear
+    2  dig labgex.in
+    3  dig labgex.in AAAA
+    4  dig labgex.in NS
+    5  dig labgex.in MX
+    6  dig labgex.in TXT
+    7  dig labgex.com
+    8  dig labgex.com AAAA
+    9  dig labgex.com TXT
+   10  dig labgex.com MX
+   11  dig +trace labgex.com
+   12  nslookup labgex.in
+   13  nslookup labgex.com
+   14  curl -I https://labgex.com
+   15  curl -v https://labgex.com
+   16  curl -IL http://labgex.com
+   17  mkdir -p day1-networking && cd day1-networking
+   18  cd ..
+   19  rmdir day1-networking/
+   20  ls
+   21  git clone https://github.com/fyzLbgx/DevOps_Engineer_internship.git
+   22  tree DevOps_Engineer_internship/
+   23  sudo apt install tree -y > /dev/null 2>&1
+   24  tree DevOps_Engineer_internship/
+   25  sudo apt install tree
+   26  sudo apt update &> update.log && sudo apt install -y tree &> install.log
+   27  tree DevOps_Engineer_internsh
+   28  ls
+   29  cd DevOps_Engineer_internship/
+   30  tree DevOps_Engineer_internship/
+   31  cd DevOps_Engineer_internship/
+   32  git status
+   33  git rev-parse --show-toplevel
+   34  ls a-
+   35  ls -a
+   36  git mv DevOps_Engineer_internship/* .
+   37  git status
+   38  git commit -m "Flatten nested folder structure"
+   39  ls DevOps_Engineer_internship/
+   40  rmdir DevOps_Engineer_internship
+   41  git push
+   42  git status
+   43  git log --oneline
+   44  tree .
+   45  mkdir Week_01
+   46  git mv Day1_Mon_05_Oct_2026 Day2_Tue_06_Oct_2026 Day3_Wed_07_Oct_2026 Day4_Thursday_08_Oct_2026 Week1/
+   47  git mv Day1_Mon_05_Oct_2026 Day2_Tue_06_Oct_2026 Day3_Wed_07_Oct_2026 Day4_Thursday_08_Oct_2026 Week_011/
+   48  git mv Day1_Mon_05_Oct_2026 Day2_Tue_06_Oct_2026 Day3_Wed_07_Oct_2026 Day4_Thursday_08_Oct_2026 Week_01/
+   49  ls
+   50  cd Week_01/
+   51  ls
+   52  cd ..
+   53  git commit -m "Move Day1 to Day4 into Week1 folder"
+   54  git push
+   55  ls
+   56  git log --oneline
+   57  ls
+   58  mkdir -p Week_02/Day1_Mon_12_Oct_2026
+   59  cd Week_02/Day1_Mon_12_Oct_2026/
+   60  dig labgex.com
+   61  dig labgex.com > dig_a.txt
+   62  cat dig_a.txt
+   63  dig labgex.com AAAA
+   64  dig labgex.com NS
+   65  dig labgex.com MX
+   66  dig labgex.com TXT
+   67  ls
+   68  dig labgex.com AAAA > dig_aaaa.txt
+   69  dig labgex.com NS > dig_ns.txt
+   70  dig labgex.com MX > dig_mx.txt
+   71  nslookup labgex.com > nslookup.txt
+   72  ls
+   73  dig labgex.in
+   74  dig labgex.in > dig_labgex_in.txt
+   75  nslookup labgex.in
+   76  nslookup labgex.in > nslookup_labgex_in.txt
+   77  curl -I https://labgex.com
+   78  curl -IL http://labgex.com
+   79  curl -v https://labgex.com
+   80  curl -I https://labgex.com > http_headers.txt
+   81  history > history_day_6.txt

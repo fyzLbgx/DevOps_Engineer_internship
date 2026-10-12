@@ -1,0 +1,13 @@
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+Name:	labgex.com
+Address: 104.21.8.84
+Name:	labgex.com
+Address: 172.67.130.100
+Name:	labgex.com
+Address: 2606:4700:3034::ac43:8264
+Name:	labgex.com
+Address: 2606:4700:3031::6815:854
+

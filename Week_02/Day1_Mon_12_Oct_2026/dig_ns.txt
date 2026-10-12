@@ -1,0 +1,21 @@
+
+; <<>> DiG 9.20.18-1ubuntu2.1-Ubuntu <<>> labgex.com NS
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 4747
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;labgex.com.			IN	NS
+
+;; ANSWER SECTION:
+labgex.com.		7119	IN	NS	ingrid.ns.cloudflare.com.
+labgex.com.		7119	IN	NS	noah.ns.cloudflare.com.
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Mon Oct 12 11:47:52 UTC 2026
+;; MSG SIZE  rcvd: 93
+
