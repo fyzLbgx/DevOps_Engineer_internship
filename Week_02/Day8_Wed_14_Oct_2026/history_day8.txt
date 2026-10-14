@@ -1,0 +1,165 @@
+    1  mkdir day8
+    2  cd day8/
+    3  cat /etc/os-release 
+    4  sudo apt update > /dev/null 
+    5  sudo apt-get upgrade -y &> /dev/null
+    6  sudo apt-get upgrade -y
+    7  sudo ufw status
+    8  sudo apt install nginx -y > nginx_install.txt
+    9  sudo ss -tunlp | grep 80
+   10  curl localhost
+   11  mkdir custom_app
+   12  cd custom_app/
+   13  echo "Custom app on 8080" > index.html
+   14  python -v
+   15  python3 -v
+   16  python3 -m http.server 8080
+   17  curl ifconfig.me
+   18  python3 -m http.server 8080
+   19  sudo ufw status
+   20  sudo ufw enable
+   21  sudo ufw show
+   22  sudo ufw status -v
+   23  sudo ufw status verbose
+   24  sudo ufw allow 22/tcp
+   25  sudo ufw status verbose
+   26  sudo ufw status numbered
+   27  sudo ufw allow http
+   28  sudo ufw status numbered
+   29  sudo ufw app info http
+   30  sudo ufw app info "http"
+   31  sudo ufw app list
+   32  sudo ufw app info 'Nginx HTTP'
+   33  ls /etc/ufw/applications.d/
+   34  cat /etc/ufw/applications.d/nginx
+   35  sudo nano /etc/ufw/applications.d/custompythonappfyz
+   36  ls
+   37  ls /etc/ufw/applications.d/
+   38  cat /etc/ufw/applications.d/
+   39  cat /etc/ufw/applications.d/custompythonappfyzy 
+   40  sudo ufw app list
+   41  sudo ufw app info learnufw
+   42  sudo ufw allow learnufw
+   43  sudo ufw delete allow learnufw
+   44  sudo ufw--help
+   45  ufw --help
+   46  sudo ufw delete 80
+   47  sudo ufw delete allow 80
+   48  sudo ufw delete allow 8080
+   49  sudo ufw app list
+   50  sudo ufw status numbered
+   51  sudo ufw delete 4
+   52  sudo ufw status numbered
+   53  sudo ufw delete 2
+   54  sudo nano /etc/ufw/applications.d/learn_ufw_multi
+   55  sudo ufw app info MultiApp_learn_ufw
+   56  sudo ufw status numbered
+   57  sudo ufw allow MultiApp_learn_ufw
+   58  sudo ufw status numbered
+   59  sudo ufw show added
+   60  python3 -m http.server 9001
+   61  sudo ufw delete allow MultiApp_learn_ufw
+   62  sudo ufw status verbose
+   63  sudo ufw show added
+   64  sudo ufw show listening
+   65  sudo ufw allow http
+   66  sudo ufw show listening
+   67  sudo ufw show user-rules
+   68  ufw status verbose
+   69  sudo ufw status verbose
+   70  sudo ufw status numbered 
+   71  ls /etc/ufw/
+   72  iptables --version
+   73  sudo nft list ruleset | wc -l
+   74  sudo nft list ruleset | head -20
+   75  cd ..
+   76  ls
+   77  history > history_day8.txt
+   78  history
+   79  sudo iptables -L -n
+   80  sudo ufw disable
+   81  sudo ufw status numbered 
+   82  sudo iptables -L -n -v --line-numbers
+   83  sudo ufw status
+   84  sudo iptables -L -n -v --line-numbers
+   85  sudo iptables -L
+   86  sudo iptables-save > ~/day8/iptables_after_ufw_disable.txt
+   87  history > history_day8.txt
+   88  history
+   89  sudo iptables -A INPUT -i lo -j ACCEPT
+   90  cd custom_app/
+   91  sudo iptables -L INPUT -n -v --line-numbers
+   92  sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+   93  sudo iptables -P INPUT DROP
+   94  sudo iptables -L INPUT -n
+   95  python3 -m http.server 8080
+   96  sudo iptables -L INPUT -n -v
+   97  ls
+   98  cd ..
+   99  ls
+  100  sudo iptables-save > ~/day8/my_iptables_rules.txt
+  101  cat my_iptables_rules.txt 
+  102  sudo iptables -t nat -A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
+  103  sudo iptables -t nat -L PREROUTING -n -v --line-numbers
+  104  ls
+  105  history
+  106  history > history_day8.txt 
+  107  cd ..
+  108  git clone https://github.com/fyzLbgx/DevOps_Engineer_internship.git
+  109  ls
+  110  ls day8/
+  111  ls day8/custom_app/
+  112  rm day8/nginx_install.txt 
+  113  ls /etc/nginx/nginx.conf 
+  114  cat /etc/nginx/nginx.conf 
+  115  cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf_backup
+  116  sudo cp /etc/nginx/nginx.conf /etc/nginx/nginx.conf_backup
+  117  sudo cat /etc/ssh/ssh_config
+  118  sudo cat /etc/ssh/ssh_config 
+  119  sudo cat /etc/ssh/ssh_config | grep -v port
+  120  sudo ls /etc/ssh/ssh_config.d/
+  121  sudo vim /etc/ssh/ssh_config
+  122  sudo systemctl restart ssh
+  123  sudo ss -tunlp | 22
+  124  sudo ss -tunlp | grep 22
+  125  ufw status
+  126  sudo ufw status
+  127  sudo vim /etc/ssh/ssh_config
+  128  ssh -i
+  129  ssh -h
+  130  cat /etc/ssh/sshd_config
+  131  sudo vim /etc/ssh/sshd_config
+  132  sudo ss -tunlp | grep 22
+  133  sudo systemctl restart ssh
+  134  sudo ss -tunlp | grep 22
+  135  sudo ss -tunlp | grep 5050
+  136  sudo systemctl daemon-reload
+  137  sudo ss -tunlp | grep 5050
+  138  cat /etc/ssh/sshd_config | grep -v Port
+  139  cat /etc/ssh/sshd_config | grep -v -i port
+  140  grep -vi port /etc/ssh/sshd_config
+  141  sudo vim /etc/ssh/sshd_config
+  142  sudo systemctl daemon-reload
+  143  sudo ss -tunlp | grep -E '22|5050'
+  144  sudo vim /etc/ssh/sshd_config
+  145  sudo vim /etc/ssh/ssh_config
+  146  sudo systemctl restart sshd-
+  147  sudo systemctl restart sshd.service
+  148  sudo ss -tunlp | grep -E '22|5050'
+  149  sudo vim /etc/ssh/sshd_config
+  150  sudo systemctl restart sshd.service
+  151  sudo systemctl daemon-reload 
+  152  sudo ss -tunlp | grep -E 5050
+  153  ufw status 
+  154  sudo ufw status 
+  155  ls
+  156  sudo vim /etc/ssh/sshd_config
+  157  sudo systemctl restart sshd.service
+  158  sudo systemctl daemon-reload 
+  159  sudo systemctl reload ssh.socket
+  160  ssh -isudo systemctl daemon-reload
+  161  sudo systemctl restart ssh.socket
+  162  sudo systemctl daemon-reload
+  163  history
+  164  ls
+  165  history > day8/history_day8.txt 
