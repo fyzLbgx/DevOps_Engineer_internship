@@ -1,0 +1,28 @@
+    1  clear
+    2  cd ssh_learn/
+    3  ls ../.ssh/
+    4  ls
+    5  mv -v *learn_* ~/.ssh/
+    6  ls
+    7  chmod 600 ~/.ssh/inetrn_learn_ed25519 ~/.ssh/intern_learn_rsa
+    8  chmod 644 ~/.ssh/*.pub
+    9  ls -l ~/.ssh/
+   10  ls
+   11  scp -i ../ec2.pem ../ssh/inetrn_learn_ed25519.pub ubuntu@172.31.35.45:~/
+   12  cd ..
+   13  ls .ssh/
+   14  scp -i ~/ec2.pem ~/.ssh/inetrn_learn_ed25519.pub ubuntu@172.31.35.45:~/
+   15  ssh -i .ssh/inetrn_learn_ed25519 ubuntu@172.31.35.45
+   16  history
+   17  history > history.txt
+   18  ls
+   19  vim .ssh/config
+   20  chmod 600 ~/.ssh/config
+   21  ssh ec2server
+   22  history > history2.txt
+   23  history 
+   24  ssh -v ec2server exit >> ~/ssh_learn/notes.txt 2>&1
+   25  cat ssh_learn/notes.txt 
+   26  history
+   27  sftp ec2server
+   28  history > terminal_history.txt
