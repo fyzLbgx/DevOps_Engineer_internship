@@ -1,0 +1,209 @@
+    1  clear
+    2  mkdir ~/wordpress-project && cd ~/wordpress-project
+    3  lsb_release -a
+    4  curl -s https://checkip.amazonaws.com
+    5  dig +short blog.fayaz.xyz
+    6  free -h
+    7  lscpu | grep core
+    8  lscpu | grep cpu
+    9  sudo apt update
+   10  sudo apt install -y nginx
+   11  systemctl status nginx
+   12  sudo apt install -y mysql-server
+   13  systemctl status mysql
+   14  sudo ss -tlnp | grep mysql
+   15  openssl rand -base64 18
+   16  sudo mysql
+   17  mysql -u wpuser -p
+   18  sudo mysql
+   19  sudo apt install -y php-fpm php-mysql php-curl php-gd php-mbstring php-xml php-zip php-intl
+   20  php -v
+   21  systemctl status php8.3-fpm --no-pager
+   22  ls -l /run/php/
+   23  sudo mkdir -p /var/www/wordpress
+   24  sudo nano /etc/nginx/sites-available/blog.fayaz.xyz
+   25  sudo ln -s /etc/nginx/sites-available/blog.fayaz.xyz /etc/nginx/sites-enabled/
+   26  sudo nginx -t
+   27  sudo systemctl reload nginx
+   28  echo '<?php phpinfo();' | sudo tee /var/www/wordpress/info.php
+   29  sudo rm /var/www/wordpress/info.php
+   30  cd /tmp
+   31  curl -O https://wordpress.org/latest.tar.gz
+   32  ls
+   33  cd /tmp/
+   34  tar -xzf latest.tar.gz
+   35  ls wordpress
+   36  sudo cp -a /tmp/wordpress/. /var/www/wordpress/
+   37  ls /var/www/wordpress/
+   38  sudo chown -R www-data:www-data /var/www/wordpress
+   39  sudo mysql -e "SHOW TABLES FROM wordpress;"
+   40  sudo apt install -y certbot python3-certbot-nginx
+   41  sudo certbot --nginx -d blog.fayaz.xyz
+   42  cat /etc/nginx/sites-available/blog.fayaz.xyz
+   43  systemctl list-timers | grep certbot
+   44  sudo certbot renew --dry-run
+   45  cd ~/wordpress-project
+   46  ls
+   47  rm -rf /tmp/wordpress /tmp/latest.tar.gz
+   48  mkdir -p nginx
+   49  cp /etc/nginx/sites-available/blog.fayaz.xyz nginx/
+   50  history > terminal-history.txt
+   51  cat versions.txt
+   52  cd ..
+   53  git clone https://github.com/fyzLbgx/DevOps_Engineer_internship.git
+   54  cd -
+   55  ls
+   56  nano nginx_notes.txt
+   57  df -h /
+   58  curl https://support-v3.eramba.org/ping.html
+   59  dig +short eramba.fayaz.xyz
+   60  cd ..
+   61  git clone https://github.com/eramba/docker
+   62  cd docker/
+   63  vim .env 
+   64  openssl rand -hex 32
+   65  vim .env 
+   66  cat .env 
+   67  openssl rand -hex 32
+   68  vim .env 
+   69  chmod 600 .env
+   70  ls -l .env
+   71  vim docker-compose.simple-install.yml
+   72  sudo fallocate -l 4G /swapfile
+   73  sudo chmod 600 /swapfile
+   74  sudo mkswap /swapfile
+   75  sudo swapon /swapfile
+   76  free -h
+   77  grep -n -B2 -A3 "ports:" docker-compose.simple-install.yml
+   78  grep -v PUBLIC .env 
+   79  grep  PUBLIC .env 
+   80  docker -v
+   81  cat Caddyfile
+   82  sudo apt-get update
+   83  sudo apt-get install -y ca-certificates curl
+   84  {   sudo install -m 0755 -d /etc/apt/keyrings &&   sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc &&   sudo chmod a+r /etc/apt/keyrings/docker.asc; } >> docker_setup.log 2>&1
+   85  vom docker_setup.log 
+   86  vim docker_setup.log 
+   87  echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+   88    $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" |   sudo tee /etc/apt/sources.list.d/docker.list >> docker_setup.log 2>&1
+   89  vim docker_setup.log 
+   90  tail docker_setup.log 
+   91  tail -f  docker_setup.log 
+   92  cat /etc/apt/sources.list.d/docker.list
+   93  {   sudo apt-get update &&   sudo DEBIAN_FRONTEND=noninteractive apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin; } >> docker_setup.log 2>&1
+   94  tail docker_setup.log 
+   95  docker -v
+   96  docker compose -v
+   97  sudo docker run hello-world
+   98  docker compose version
+   99  docker compose -v
+  100  docker compose version
+  101  docker-v
+  102  docker -v
+  103  grep PUBLIC .env
+  104  cat Caddyfile
+  105  sudo docker compose -f docker-compose.simple-install.yml up -d
+  106  docker ps
+  107  sudo docker ps
+  108  sudo docker logs -f eramba
+  109  curl -kI https://127.0.0.1:8443
+  110  curl -k https://127.0.0.1:8443
+  111  free -h
+  112  sudo docker stats --no-stream
+  113  docker ps
+  114  sudo nano /etc/nginx/sites-available/eramba.fayaz.xyz
+  115  sudo ln -s /etc/nginx/sites-available/eramba.fayaz.xyz /etc/nginx/sites-enabled/
+  116  sudo nginx -t
+  117  sudo systemctl reload nginx
+  118  curl -I http://eramba.fayaz.xyz
+  119  sudo certbot --nginx -d eramba.fayaz.xyz
+  120  cat /etc/nginx/sites-available/eramba.fayaz.xyz
+  121  cd ~/docker
+  122  sudo docker volume ls
+  123  grep -n "/var/lib/mysql" docker-compose.simple-install.yml
+  124  sudo docker compose -f docker-compose.simple-install.yml down -v
+  125  sudo docker volume ls
+  126  sudo docker compose -f docker-compose.simple-install.yml up -d
+  127  sudo docker logs -f eramba
+  128  docker volume ls
+  129  sudo docker volume ls
+  130  cd
+  131  mkdir -p ~/server-projects/eramba
+  132  mv ~/wordpress-project ~/server-projects/wordpress
+  133  ls ~/server-projects
+  134  cp /etc/nginx/sites-available/eramba.fayaz.xyz ~/server-projects/eramba/
+  135  cp ~/docker/Caddyfile ~/server-projects/eramba/
+  136  ls
+  137  ls server-projects/
+  138  ls server-projects/wordpress/
+  139  ls server-projects/eramba/
+  140  history > ~/server-projects/terminal-history.txt
+  141  find ~/server-projects -type f
+  142  mkdir ~/uptime-kuma
+  143  cd ~/uptime-kuma
+  144  nano compose.yaml
+  145  vim compose.yaml 
+  146  sudo docker compose config
+  147  sudo docker compose up -d
+  148  sudo docker compose ps
+  149  curl -I http://127.0.0.1:3001
+  150  dig +short status.fayaz.xyz
+  151  docker compose config
+  152  sudo nano /etc/nginx/sites-available/status.fayaz.xyz
+  153  sudo ln -s /etc/nginx/sites-available/status.fayaz.xyz /etc/nginx/sites-enabled/
+  154  sudo nginx -t
+  155  sudo systemctl reload nginx
+  156  sudo certbot --nginx -d status.fayaz.xyz
+  157  sudo nano /etc/nginx/sites-available/status.fayaz.xyz
+  158  sudo systemctl reload nginx
+  159  sudo nginx -t
+  160  sudo systemctl reload nginx
+  161  sudo systemctl stop php8.3-fpm
+  162  sudo systemctl start php8.3-fpm
+  163  mkdir -p ~/server-projects/uptime-kuma
+  164  cp ~/uptime-kuma/compose.yaml ~/server-projects/uptime-kuma/
+  165  cp /etc/nginx/sites-available/status.fayaz.xyz ~/server-projects/uptime-kuma/
+  166  dig +short lbgxteam.site
+  167  dig +short www.lbgxteam.site
+  168  dig +short lbgxteam.site @ns13.domaincontrol.com
+  169  dig +short lbgxteam.site
+  170  dig +short www.lbgxteam.site
+  171  dig +short site.lbgxteam.site
+  172  history
+  173  history > history2.txt
+  174  history
+  175  dig +short lbgxteam.site
+  176  sudo ss -tlnp | grep -E ':3000|:2222'
+  177  mkdir -p ~/forgejo/data
+  178  cd ~/forgejo
+  179  ls -ln
+  180  nano compose.yaml
+  181  sudo docker compose config
+  182  sudo docker compose up -d
+  183  sudo docker compose ps
+  184  ls -ln ~/forgejo/data
+  185  curl -I http://127.0.0.1:3000
+  186  history
+  187  sudo nano /etc/nginx/sites-available/lbgxteam.site
+  188  sudo ln -s /etc/nginx/sites-available/lbgxteam.site /etc/nginx/sites-enabled/
+  189  sudo nginx -t
+  190  sudo systemctl reload nginx
+  191  sudo certbot --nginx -d lbgxteam.site -d www.lbgxteam.site
+  192  sudo certbot certificates
+  193  cp ~/forgejo/compose.yaml ~/server-projects/forgejo/
+  194  cp /etc/nginx/sites-available/lbgxteam.site ~/server-projects/forgejo/
+  195  cp ~/uptime-kuma/compose.yaml ~/server-projects/uptime-kuma/
+  196  cp /etc/nginx/sites-available/status.fayaz.xyz ~/server-projects/uptime-kuma/
+  197  tree ../server-projects/
+  198  sudo apt install tree
+  199  rm -f ~/server-projects/wordpress/terminal-history.txt
+  200  history > ~/server-projects/terminal-history.txt
+  201  tree server-projects/
+  202  cd DevOps_Engineer_internship/
+  203  tree .
+  204  mkdir -p Week_02/Day9_Thu_15_Oct_2026
+  205  cp -r ~/server-projects/* Week_02/Day9_Thu_15_Oct_2026/
+  206  cd Week_02/Day9_Thu_15_Oct_2026/
+  207  tree .
+  208  ls
+  209  history > Day9_terminal_history.txt
