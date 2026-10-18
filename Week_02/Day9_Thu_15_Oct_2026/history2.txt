@@ -1,0 +1,83 @@
+    1  clear
+    2  ls -l /var/log/nginx/
+    3  cat /var/log/nginx/access.log 
+    4  tail -f  /var/log/nginx/access.log 
+    5  sudo apt install nginx
+    6  sudo apt update
+    7  sudo apt update\
+    8  sudo apt install nginx
+    9  nano /etc/nginx/nginx.conf 
+   10  ls /etc/nginx/
+   11  cat /etc/nginx/sites-available/default 
+   12  vim /etc/nginx/sites-available/default 
+   13  sudp apt install npm nodejs
+   14  sudo apt install npm nodejs
+   15  mkdir ~/node-backend && cd ~/node-backend
+   16  nano server.js
+   17  node server.js
+   18  sudo vim /etc/nginx/sites-available/default 
+   19  sudo ngin -T
+   20  sudo nginx -T
+   21  sudo nginx -t
+   22  sudo systemctl reload nginx
+   23  node server.js
+   24  sudo nginx -t
+   25  sudo vim /etc/nginx/sites-available/default 
+   26  node server.js
+   27  sudo nginx -t
+   28  vim load-test
+   29  mkdir load-test
+   30  vim load-test/server1.js
+   31  vim load-test/server2.js
+   32  cd load-test/
+   33  node server1.js &
+   34  node server2.js &
+   35  sudo nginx -t
+   36  sudo systemctl reload nginx.service 
+   37  sudo vim /etc/nginx/sites-available/default 
+   38  sudo systemctl reload nginx.service 
+   39  cd
+   40  sudo openssl req -x509 -nodes -days 365  -newkey rsa:2048  -keyout /etc/ssl/private/nginx-selfsigned.key  -out /etc/ssl/certs/nginx-selfsigned.crt
+   41  sudo ls /etc/ssl/private/
+   42  sudo vim /etc/nginx/sites-available/default 
+   43  sudo systemctl reload nginx.service 
+   44  sudo nginx -t
+   45  cd node-backend/
+   46  node server.js
+   47  node server.js &
+   48  https://localhost
+   49  curl https://localhost
+   50  curl https://localhost -k
+   51  history
+   52  bg
+   53  jobs
+   54  git clone https://github.com/jaiswaladi246/static-site.git
+   55  cp -r static-site/ /var/www/html
+   56  sudo cp -r static-site/ /var/www/html
+   57  sudo systemctl reload nginx.service 
+   58  sudo ls -l /var/www/html/
+   59  sudo chown -R www-data:www-data /var/www/html/static-site/
+   60  sudo vim /etc/nginx/sites-available/static-site
+   61  sudo ln -s /etc/nginx/sites-available/static-site /etc/nginx/sites-enabled/
+   62  sudo nginx -t
+   63  cat /etc/nginx/sites-enabled/static-site 
+   64  sudo vim /etc/nginx/sites-available/static-site
+   65  sudo nginx -t
+   66  sudo vim /etc/nginx/sites-available/static-site
+   67  sudo nginx -t
+   68  sudo systemctl reload nginx.service 
+   69  sudo vim /etc/nginx/sites-available/static-site
+   70  sudo systemctl reload nginx.service 
+   71  sudo cat /etc/nginx/sites-available/static-site 
+   72  ls -l  /var/www/html/
+   73  sudo vim /etc/nginx/sites-available/static-site
+   74  sudo systemctl reload nginx.service 
+   75  git clone https://github.com/jaiswaladi246/nginx-node-proxy.git
+   76  tree nginx-node-proxy/
+   77  sudo apt install tree
+   78  tree nginx-node-proxy/
+   79  ls
+   80  ls node-backend/
+   81  rm /etc/nginx/sites-available/static-site 
+   82  sudo rm /etc/nginx/sites-available/static-site 
+   83  cd /var/
