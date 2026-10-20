@@ -1,0 +1,33 @@
+Docker notes
+
+In simple terms docker let us package an applocation togather with everything
+it need to run like dependencies, libraries, settings etc whereas 
+vm has its own full os and kernel, so its heavy.
+
+A container shares the host kernel so it can be made very light weight also its strips away most of unnecessry os componenets and utility softwares etc to make it light as possible.
+
+
+one of the advantages of docker is it work identical whereever it is run. it solved a very big  problem that used to cause a lot of issues  traditionally where poeples os and environment differed
+
+
+Image - a read only template or we can call it blueprint for a container. it usually contains app and its dependencies
+
+container - a running instance of a image. we can launch as many containers we want from a single image. conatiners areusually disposible in nature and data inside the containers are usually not pesistent unless we bind a directory or voulume to it
+
+
+dockerhub - its an online repository we can crete public or private repo depending on our reqiremen. poeple aslo share redy made images like nginx python myql etc here 
+
+ docker engine- this omponenet builds and run containers 
+
+
+
+a very simple basic dockerfile example
+
+FROM python:latest  -this pull the base image if it detect in dockerhub public repo latest tag means pull latest image 
+WORKDIR /docker_learn - this tell it to set working folder
+COPY .. copy our files from teh current directory to docker wordir dir which we set as /app
+
+RUN pip insstall -r requirements.txt - requiemets txt install pyhon dependencies to run application 
+CMD ["python", "app.py"] - this run python ommand to run when container starts. in dockker we can override cmd where as entrypoints overriding is not possile  
+
+
