@@ -1,0 +1,8 @@
+PING app4 (172.18.0.3): 56 data bytes
+64 bytes from 172.18.0.3: seq=0 ttl=127 time=0.057 ms
+64 bytes from 172.18.0.3: seq=1 ttl=127 time=0.066 ms
+64 bytes from 172.18.0.3: seq=2 ttl=127 time=0.069 ms
+
+--- app4 ping statistics ---
+3 packets transmitted, 3 packets received, 0% packet loss
+round-trip min/avg/max = 0.057/0.064/0.069 ms

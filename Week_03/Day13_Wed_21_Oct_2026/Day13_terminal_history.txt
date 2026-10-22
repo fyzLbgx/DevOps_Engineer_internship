@@ -1,0 +1,226 @@
+1  sudo dnf install docker.io docker-buildx git tree curl -y
+    2  sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    3  sudo dnf -y install dnf-plugins-core
+    4  sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    5  sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    6  sudo sed -i 's/\$releasever/9/g' /etc/yum.repos.d/docker-ce.repo
+    7  sudo dnf clean all
+    8  sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+    9  docker run hello-world
+   10  history > history.txt
+   11  ls
+   12  newgrp docker
+   13  sudo apt install docker.io docker-buildx git tree curl -y
+   14  sudo apt update
+   15  sudo dnf update
+   16  sudo systemctl enable --now docker
+   17  sudo usermod -aG docker $USER
+   18  docker run hello-world
+   19  cd ~/DevOps_Engineer_internship
+   20  mkdir -p Week_03/Day13_Wed_21_Oct_2026
+   21  cd Week_03/Day13_Wed_21_Oct_2026
+   22  pwd
+   23  docker run -it --name no-volume-test alpine sh
+   24  docker ps
+   25  docker ps -a
+   26  docker start c3c
+   27  docker exec -it c3c bash
+   28  docker exec -it c3c sh
+   29  docker exec c3c cat /data/test
+   30  docker exec c3c cat /data/test.txt
+   31  docker rm no-vol-test
+   32  docker ps
+   33  docker rmc3c
+   34  docker rm c3c
+   35  docker stop c3c
+   36  doxker ps a
+   37  doxker ps aa
+   38  doxker ps -a
+   39  docker ps -a
+   40  docker rm c3c a28
+   41  docker images
+   42  docker rmi hello-world:latest
+   43  docker volume create day13
+   44  docker volume ls
+   45  docker volume inspect mydata
+   46  docker volume inspect day13
+   47  docker volume inspect day13 > docker_volume_inspect.txt
+   48  docker run -it --name day13test -v day13:/data alpine sh
+   49  docker ps
+   50  docker ps -a
+   51  docker rm 758
+   52  docker run -v day13:/data alpine cat /data/hello.txt
+   53  sudo ls -l /var/lib/docker/volumes/
+   54  sudo ls -l /var/lib/docker/volumes/day13
+   55  docker volume rm day13
+   56  docker volume rm day13 > docker_volume_remove_attemt_while_in_use.txt
+   57  cat docker_volume_remove_attemt_while_in_use.txt
+   58  docker volume rm day13
+   59  docker volume rm day13 2> docker_volume_remove_attemt_while_in_use.txt
+   60  mkdir bind_test
+   61  ls
+   62  nano bind_test/host_file.txt
+   63  cat bind_test/host_file.txt
+   64  docker run -it --name bind-test -v /home/ubuntu/DevOps_Engineer_internship/Week_03/Day13_Wed_21_Oct_2026/bind_test:/data alpine sh
+   65  nano bind_test/host_file.txt
+   66  docker run -it --name bind-test -v /home/ubuntu/DevOps_Engineer_internship/Week_03/Day13_Wed_21_Oct_2026/bind_test:/data alpine sh
+   67  docker ps
+   68  docker ps -a
+   69  docker exec -it --name bind-test -v /home/ubuntu/DevOps_Engineer_internship/Week_03/Day13_Wed_21_Oct_2026/bind_test:/data alpine sh
+   70  docker exec -it --name fd6 -v /home/ubuntu/DevOps_Engineer_internship/Week_03/Day13_Wed_21_Oct_2026/bind_test:/data alpine sh
+   71  docker run -it --name bind-test -v /home/ubuntu/DevOps_Engineer_internship/Week_03/Day13_Wed_21_Oct_2026/bind_test:/data alpine sh
+   72  docker start -ai bind-test
+   73  pwd
+   74  docker images
+   75  docker exec -it -v /home/ubuntu/DevOps_Engineer_internship/Week_03/Day13_Wed_21_Oct_2026/bind_test:/data alpine sh
+   76  docker run -v /home/ubuntu/DevOps_Engineer_internship/Week_03/Day13_Wed_21_Oct_2026/bind_test:/data alpine sh
+   77  docker ps
+   78  docker ps -a
+   79  docker rm kind_beaver bind-test boring_vaughan
+   80  docker run -it --name bind-test2 -v /home/ec2-user/DevOps_Engineer_internship/Week_03/Day13_Wed_21_Oct_2026/bind_test:/data alpine sh
+   81  history
+    1  sudo dnf install docker.io docker-buildx git tree curl -y
+    2  sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    3   sudo dnf -y install dnf-plugins-core
+    4   sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    5  sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    6   sudo sed -i 's/\$releasever/9/g' /etc/yum.repos.d/docker-ce.repo
+    7  sudo dnf clean all
+    8  sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+    9  docker run hello-world
+   10  history > history.txt
+   11  ls
+   12  newgrp docker
+   13   sudo apt install docker.io docker-buildx git tree curl -y
+   14  sudo apt update
+   15  sudo dnf update
+   16  sudo systemctl enable --now docker
+   17  sudo usermod -aG docker $USER
+   18   history
+   19  nano ~/.bashrc
+   20  ls
+   21  viim history.txt 
+   22  vim history.txt 
+   23  cd DevOps_Engineer_internship/Week_03/Day13_Wed_21_Oct_2026/
+   24  ls
+   25  cd bind_test/
+   26  ls
+   27  ip a
+   28  docker network ls
+   29  docker network ls > network_ls_before.txt
+   30  sudodocker network ls > network_ls_before.txt
+   31  sudo docker network ls > network_ls_before.txt
+   32  ls -ld .
+   33  ls
+   34  cd ..
+   35  ls
+   36  cd ..
+   37  ls
+   38  d Day13_Wed_21_Oct_2026/
+   39  cd Day13_Wed_21_Oct_2026/
+   40  ls
+   41  ls -a
+   42  cd ..
+   43  sudo chown -R ec2-user:ec2-user ~/Week_03/
+   44  ls
+   45  cd d
+   46  cd Day13_Wed_21_Oct_2026/
+   47  docker network ls > network_ls_before.txt
+   48  sudo chmod -R u+w ~/Week_03/
+   49  docker network ls > network_ls_before.txt
+   50  ls -ld ../
+   51  ls -ld ../Day13_Wed_21_Oct_2026/
+   52  sudo chown -R ec2-user:ec2-user ../../Week_03/
+   53  ls -ld ../
+   54  docker network ls > network_ls_before.txt
+   55  ls
+   56  docker network inspect bridge
+   57  ip addr show docker0
+   58  docker run -d --name c1 alpine sleep 3600
+   59  docker run -d --name c2 alpine sleep 3600
+   60  docker ps
+   61  docker inspect c2 | grep IPAddress
+   62  docker inspect c1 | grep IPAddress
+   63   history
+   64  cd .
+   65  ls
+   66  cd -
+   67  ls
+   68  cd /home/ec2-user/
+   69  ls
+   70  ls Week_03/Day13_Wed_21_Oct_2026/
+   71  ls DevOps_Engineer_internship/Week_03/Day13_Wed_21_Oct_2026/
+   72  ls
+   73  cat history.txt 
+   74  cd ..
+   75  ls
+   76  cd ubuntu/
+   77  ls
+   78  cd ..
+   79  cd /home/ec2-user/
+   80  ls
+   81  cp history.txt DevOps_Engineer_internship/Week_03/Day13_Wed_21_Oct_2026/
+   82  cp Week_03/Day13_Wed_21_Oct_2026/* DevOps_Engineer_internship/Week_03/
+   83  cp -r Week_03/Day13_Wed_21_Oct_2026/* DevOps_Engineer_internship/Week_03/
+   84  cd Week_03/Day13_Wed_21_Oct_2026/bind_test/
+   85  ls
+   86  cd ..
+   87  ls
+   88  cp ../../history.txt .
+   89  ls
+   90  cd ..
+   91  ls
+   92  rm -rf DevOps_Engineer_internship/
+   93  sudo rm -rf DevOps_Engineer_internship/
+   94  sudo rm -rf ../ubuntu/
+   95  ls
+   96  rm history.txt 
+   97  cd Week_03/Day13_Wed_21_Oct_2026/bind_test/
+   98  cd ..
+   99  ls
+  100  docker inspect c2 | grep IPAddress
+  101  docker exec c1 ping -c 3 172.17.0.3
+  102  docker network create --driver bridge day13_bridge_network
+  103  docker network ls
+  104  docker network inspect day13_bridge_network 
+  105  docker network inspect 
+  106  docker network inspect bridge 
+  107  docker run -d --name app1 --network mynet alpine sleep 3600
+  108  docker run -d --name app1 --network day13_bridge_network alpine sleep 3600
+  109  docker run -d --name app3 --network day13_bridge_network alpine sleep 3600
+  110  docker run -d --name app4 --network day13_bridge_network alpine sleep 3600
+  111  docker ps
+  112* 
+  113  docker exec a
+  114  pp3 ping -c 3 app4
+  115  docker exec app3 ping -c 3 app4
+  116  docker exec app3 ping -c 3 app4 > ping_custom_network_by_name.txt
+  117  docker exec app1 cat /etc/resolv.conf
+  118  docker exec app3 cat /etc/resolv.conf
+  119  clear
+  120  docker ps
+  121  docker exec app3 ping -c 3 c1
+  122  docker exec app3 ping -c 3 app4
+  123  docker network connect day13_bridge_network c1
+  124  docker exec app3 ping -c 3 c1
+  125  docker network disconnect day13_bridge_network c1
+  126  docker stop c1 c2 app3 app4
+  127  docker rm c1 c2 app3 app4
+  128  docker ps -a
+  129  docker network rm day13_bridge_network 
+  130  docker network ls
+  131  sudo ss -tlnp
+  132   docker run -d --name day13-host --network host nginx
+  133  docker ps
+  134  curl localhost
+  135   curl -s http://checkip.amazonaws.com
+  136  curl://18.205.235.217
+  137  curl http://18.205.235.217
+  138  curl http://18.205.235.217:80
+  139  curl http://18.205.235.217
+  140  docker run -d --name web-host-p --network host -p 8080:80 nginx
+  141  docker run -d --name web-bridge -p 80:80 nginx
+  142  docker run -d --name web-bridge -p 80:80 nginx > port_conflict.txt
+  143  docker run -d --name web-bridge -p 80:80 nginx 2> port_conflict.txt
+  144  ls
+  145  history >> history.txt 

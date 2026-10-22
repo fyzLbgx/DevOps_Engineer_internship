@@ -1,0 +1,11 @@
+[
+    {
+        "CreatedAt": "2026-10-22T07:27:16Z",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/day13/_data",
+        "Name": "day13",
+        "Options": null,
+        "Scope": "local"
+    }
+]
