@@ -1,0 +1,134 @@
+    1  sudo apt install docker.io docker-buildx git tree curl -y
+    2  sudo systemctl start docker
+    3  sudo systemctl enable docker
+    4  sudo systemctl status docker
+    5  sudo usermod -aG docker ubuntu
+    6  groups
+    7  cd DevOps_Engineer_internship/Week_03/Day12_Tue_20_Oct_2026/
+    8  git config --global user.name "fyzLbgx"
+    9  git config --global user.email "fayaz.labgex@gmail.com"
+   10  mkdir lgx-test-app
+   11  cd lgx-test-app/
+   12  nano package.json
+   13  nano app.js
+   14  vim .dockerignore
+   15  nano Dockerfile
+   16  ls -a
+   17  docker build -t lgx-test_day12:v1 .
+   18  cat package.json 
+   19  cat app.js 
+   20  vim Dockerfile 
+   21  docker build -t lgx-test_day12:v1 .
+   22  docker images
+   23  docker run -d -p 80:3000 --name lgx-api lgx-test_day12:v1
+   24  curl localhost
+   25  curl localhost/health
+   26  docker ps
+   27  docker logs 8c2
+   28  docker history lgx-test_day12:v1
+   29  nano app.js
+   30  nano package.json
+   31  docker build -t lgx-test_Day12:v3 .
+   32  docker build -t lgx-test_day12:v3 .
+   33  docker build -t lgx-test_day12:v3 . 2> dockererror.txt
+   34  cat dockererror.txt 
+   35  cat package.json 
+   36  nano package.json
+   37  docker build -t lgx-test_day12:v3 . 2> dockererror.txt
+   38  docker build -t lgx-test_day12:v3 .
+   39  docke images
+   40  docker images
+   41  docker run -d -p 8000:3000 --name lgx-api-v2 lgx-test_day12:v3
+   42  docker run -d -p 8080:3000 --name lgx-api-v2 lgx-test_day12:v3
+   43  docker run -d -p 8080:3000 --name lgx-api-v3 lgx-test_day12:v3
+   44  ls
+   45  docker images > docker_images.txt
+   46  cst docker_images.txt 
+   47  cat docker_images.txt 
+   48  docker history lgx-test_day12:v1 > history_v1.txt
+   49  docker history lgx-test_day12:v3 > history_v1.txt
+   50  docker history lgx-test_day12:v1 > history_v1.txt
+   51  docker history lgx-test_day12:v3 > history_v3.txt
+   52  curl localhost:3000 > curl_output.txt
+   53  curl localhost > curl_output.txt
+   54  curl localhost:8080 > curl_output2.txt
+   55  curl localhost/health >> curl_output.txt
+   56  cat curl_output.txt 
+   57  history > history.txt
+    1  sudo apt install docker.io docker-buildx git tree curl -y
+    2  sudo systemctl start docker
+    3  sudo systemctl enable docker
+    4  sudo systemctl status docker
+    5  sudo usermod -aG docker ubuntu
+    6  groups
+    7  cd DevOps_Engineer_internship/Week_03/Day12_Tue_20_Oct_2026/
+    8  git config --global user.name "fyzLbgx"
+    9  git config --global user.email "fayaz.labgex@gmail.com"
+   10  mkdir lgx-test-app
+   11  cd lgx-test-app/
+   12  nano package.json
+   13  nano app.js
+   14  vim .dockerignore
+   15  nano Dockerfile
+   16  ls -a
+   17  docker build -t lgx-test_day12:v1 .
+   18  cat package.json 
+   19  cat app.js 
+   20  vim Dockerfile 
+   21  docker build -t lgx-test_day12:v1 .
+   22  docker images
+   23  docker run -d -p 80:3000 --name lgx-api lgx-test_day12:v1
+   24  curl localhost
+   25  curl localhost/health
+   26  docker ps
+   27  docker logs 8c2
+   28  docker history lgx-test_day12:v1
+   29  nano app.js
+   30  nano package.json
+   31  docker build -t lgx-test_Day12:v3 .
+   32  docker build -t lgx-test_day12:v3 .
+   33  docker build -t lgx-test_day12:v3 . 2> dockererror.txt
+   34  cat dockererror.txt 
+   35  cat package.json 
+   36  nano package.json
+   37  docker build -t lgx-test_day12:v3 . 2> dockererror.txt
+   38  docker build -t lgx-test_day12:v3 .
+   39  docke images
+   40  docker images
+   41  docker run -d -p 8000:3000 --name lgx-api-v2 lgx-test_day12:v3
+   42  docker run -d -p 8080:3000 --name lgx-api-v2 lgx-test_day12:v3
+   43  docker run -d -p 8080:3000 --name lgx-api-v3 lgx-test_day12:v3
+   44  ls
+   45  docker images > docker_images.txt
+   46  cst docker_images.txt 
+   47  cat docker_images.txt 
+   48  docker history lgx-test_day12:v1 > history_v1.txt
+   49  docker history lgx-test_day12:v3 > history_v1.txt
+   50  docker history lgx-test_day12:v1 > history_v1.txt
+   51  docker history lgx-test_day12:v3 > history_v3.txt
+   52  curl localhost:3000 > curl_output.txt
+   53  curl localhost > curl_output.txt
+   54  curl localhost:8080 > curl_output2.txt
+   55  curl localhost/health >> curl_output.txt
+   56  cat curl_output.txt 
+   57  history > history.txt
+   58  sudo apt install tree -y -qq
+   59  tree ~/DevOps_Engineer_internship/
+   60  cd ~
+   61  git clone https://github.com/fyzLbgx/DevOps_Engineer_internship.git
+   62  mv DevOps_Engineer_internship/Week_03/* .
+   63  l;s
+   64  ls'
+   65  ls
+   66  git clone https://github.com/fyzLbgx/DevOps_Engineer_internship.git
+   67  rm -rf DevOps_Engineer_internship/
+   68  git clone https://github.com/fyzLbgx/DevOps_Engineer_internship.git
+   69  tree .
+   70  mv ~/Day12_Tue_20_Oct_2026 ~/DevOps_Engineer_internship/Week_03/
+   71  ls
+   72  mv lgx-test-app/*.txt .
+   73  ls -a lgx-test-app
+   74  nano lgx-test-app/.dockerignore 
+   75  mv history.txt Day12_terminal_history.txt
+   76  nano Day_12_Notes.txt
+   77  history >> Day12_terminal_history.txt
