@@ -1,0 +1,159 @@
+    1  sudo apt update
+    2  sudo apt-get install -y ca-certificates curl
+    3  sudo install -m 0755 -d /etc/apt/keyrings
+    4  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+    5  sudo chmod a+r /etc/apt/keyrings/docker.asc
+    6  echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    7  sudo apt-get update
+    8  sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    9  sudo usermod -aG docker $USER
+   10  docker --version
+   11  docker compose version
+   12  docker run hello-world
+   13  mkdir -p ~/compose-basics/lesson1
+   14  cd compose-basics/
+   15  cd lesson1/
+   16  pwd
+   17  nano docker-compose.yml
+   18  cat docker-compose.yml
+   19  docker compose config
+   20  docker compose up -d
+   21  docker compose ps
+   22  curl localhost:8080
+   23  docker compose ps
+   24  docker compose logs
+   25  docker ps
+   26  docker compose down
+   27  cd ../../
+   28  ls
+   29  mkdir lesson2
+   30  cd lesson2/
+   31  sudo apt-get update
+   32  sudo apt-get install -y unzip
+   33  curl -L -o template.zip https://download.themewagon.com/spark-admin-v1.0.0.zip
+   34  ls
+   35  unzip template.zip
+   36  ls
+   37  mkdir site
+   38  mv !(site) site/
+   39  ls
+   40  ls -la site
+   41  nano docker-compose.yml
+   42  docker compose config
+   43  docker compose up -d
+   44  curl localhost:8080
+   45  nano site/index.html
+   46  docker ps
+   47  docker compose ps
+   48  cd ..
+   49  ls
+   50  docker compose down
+   51  cd -
+   52  docker compose down
+   53  cd -
+   54  mkdir lesson3
+   55  cd lesson
+   56  cd lesson3
+   57  mkdir web backend
+   58  nano web/index.html
+   59  nano backend/server.py
+   60  nano httpd.conf
+   61  nano docker-compose.yml
+   62  nano web.yml
+   63  nano backend.yml
+   64  docker compose -f web.yml -f backend.yml config
+   65  docker compose -f web.yml -f backend.yml up -d
+   66  docker compose -f web.yml -f backend.yml ps
+   67  curl localhost:8081/
+   68  curl localhost:8081/api/
+   69  docker compose down
+   70  docker compose -f web.yml -f backend.yml down
+   71  cd ..
+   72  ls
+   73  mv lesson2/ lesson3 compose-basics/
+   74  cd compose-basics/
+   75  ls
+   76  mv lesson1 single-container
+   77  mv lesson2 bind-mount-website-learn
+   78  mv lesson3 two-services-network-volume-learn
+   79  ls
+   80  cd compose-basics/
+   81  ls
+   82  mkdir three-services-with-mysql
+   83  cd three-services-with-mysql/
+   84  ls
+   85  ls ../two-services-network-volume-learn/
+   86  cp -r ../two-services-network-volume-learn/* .
+   87  ls
+   88  mkdir mysql-init
+   89  nano mysql-init/init.sql
+   90  nano mysql.yml
+   91  cat mysql
+   92  cat mysql.yml 
+   93  ls
+   94  ls mysql-init/
+   95  rm backend.yml
+   96  nano backend.yml
+   97  rm backend
+   98  rm backend/server.
+   99  rm backend/server.py 
+  100  nano backend/server.py
+  101  rm web/index.html
+  102  nano web/index.html
+  103  ls
+  104  docker compose -f web.yml -f backend.yml -f mysql.yml config
+  105  docker compose -f web.yml -f backend.yml -f mysql.yml up -d
+  106  curl localhost:8081/api/
+  107  docker compose -f web.yml -f backend.yml -f mysql.yml down
+  108  nano .env
+  109  nano mysql.yml
+  110  nano backend.yml
+  111  cp .env .env.example
+  112  nano .env.example
+  113  nano .gitignore
+  114  docker compose -f web.yml -f backend.yml -f mysql.yml config
+  115  docker compose -f web.yml -f backend.yml -f mysql.yml up -d
+  116  docker compose -f web.yml -f backend.yml -f mysql.yml ps
+  117  docker compose -f web.yml -f backend.yml -f mysql.yml down
+  118  sudo apt install tree -y -qq
+  119  cd /home/ubuntu/
+  120  ls
+  121  git clone https://github.com/fyzLbgx/DevOps_Engineer_internship.git
+  122  ls
+  123  tree .
+  124  ls
+  125  cd DevOps_Engineer_internship/
+  126  ls
+  127  mkdir -p Week_04/Day14_Mon_26_Oct_2026
+  128  cp -r ~/compose-basics Week_04/Day14_Mon_26_Oct_2026/
+  129  ls -la Week_04/Day14_Mon_26_Oct_2026/compose-basics/
+  130  ls ../compose-basics/
+  131  mkdir -p Week_03/Day14_Thu_22_Oct_2026
+  132  rm -rf Week_04
+  133  cp -r ~/compose-basics Week_03/Day14_Thu_22_Oct_2026/
+  134  ls -la Week_03/Day14_Thu_22_Oct_2026/compose-basics
+  135  ls -la Week_03/Day14_Thu_22_Oct_2026/compose-basics/two-services-network-volume-learn/
+  136  ls -la Week_03/Day14_Thu_22_Oct_2026/compose-basics/three-services-with-mysql/
+  137  ls -la
+  138  nano .gitignore
+  139  git add .
+  140  git commit -m "Day 14: Docker Compose lessons"
+  141  git reset --soft HEAD~1
+  142  git reset
+  143  git status
+  144  ls
+  145  vim .gitignore 
+  146  nano .gitignore 
+  147  git add .gitignore Week_03/Day14_Thu_22_Oct_2026
+  148  git status
+  149  cat .gitignore
+  150  git reset -- Week_03/Day14_Thu_22_Oct_2026/compose-basics/bind-mount-website-learn/site
+  151  rm -rf Week_03/Day14_Thu_22_Oct_2026/compose-basics/bind-mount-website-learn/site
+  152  git diff --cached --stat | tail -1
+  153  git commit -m "Day 14: Docker Compose lessons 1-4"
+  154  git push
+  155  ls
+  156  history 
+  157  ls
+  158  cd DevOps_Engineer_internship/
+  159  history > Week_03/Day14_Thu_22_Oct_2026/Day14_terminal_history.txt
