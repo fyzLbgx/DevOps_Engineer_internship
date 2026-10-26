@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 3</title>
+</head>
+<body>
+  <h1>Apache + Python backend</h1>
+  <p>Visits counted by the backend:</p>
+  <p id="count">loading...</p>
+  <script>
+    fetch("/api/")
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("count").textContent = data.visits;
+      });
+  </script>
+</body>
+</html>

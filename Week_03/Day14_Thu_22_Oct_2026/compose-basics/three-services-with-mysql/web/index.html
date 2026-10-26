@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lesson 4</title>
+</head>
+<body>
+  <h1>Guestbook from MySQL</h1>
+  <ul id="list"><li>loading...</li></ul>
+  <script>
+    fetch("/api/")
+      .then(r => r.json())
+      .then(rows => {
+        const list = document.getElementById("list");
+        list.innerHTML = "";
+        rows.forEach(row => {
+          const li = document.createElement("li");
+          li.textContent = row.name + ": " + row.message;
+          list.appendChild(li);
+        });
+      });
+  </script>
+</body>
+</html>
