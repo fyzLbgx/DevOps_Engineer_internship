@@ -1,0 +1,92 @@
+    1  ls
+    2  git --version
+    3  git config --global user.name "fyzLbgx"
+    4  git config --global user.email "fayaz.labgex@gmail.com"
+    5  git branch
+    6  git config --global init.defaultBranch main
+    7  git branch
+    8  git config --global --list
+    9  mkdir git-lab
+   10  cd git-lab/
+   11  git init
+   12  la -l
+   13  ls .git/
+   14  cat .git/HEAD 
+   15  ls .git/refs/heads/
+   16  echo "hello" > app.txt
+   17  ls
+   18  git add app.txt
+   19  git commit -m "first commit"
+   20  ls
+   21  cd git-lab/
+   22  git log --oneline
+   23  ls .git/refs/heads
+   24  cat .git/refs/heads/main
+   25  echo "line 2" >> app.txt
+   26  git commit -am "second commit"
+   27  echo "line 3" >> app.txt
+   28  git commit -am "third commit"
+   29  git log --oneline
+   30  cat .git/refs/heads/main
+   31  git branch week04experiment
+   32  git branch
+   33  ls .git/refs/heads/main 
+   34  cat .git/refs/heads/main 
+   35  git cat-file -p e5f97ba
+   36  cat .git/refs/heads/week04experiment
+   37  git fsck
+   38  git cat-file -s e5f97ba
+   39  git cat-file -p f01f56f
+   40  git count-objects -vH
+   41  git cat-file -p c965250
+   42  git cat-file 4156377
+   43  cat-file -p e5f97ba
+   44  git cat-file -p e5f97ba
+   45  git cat-file  f01f5
+   46  git cat-file -p e5f97ba
+   47  git cat-file -p  f01f5
+   48  git cat-file -p  c965
+   49  git cat-file -p 4156377
+   50  git cat-file -p f976
+   51  git cat-file -p ce01
+   52  git cat-file -p app.txt
+   53  mkdir src
+   54  echo "print('hi')" > src/main.py
+   55  ls
+   56  echo "my notes" > readme.txt
+   57  git add .
+   58  git commit -m "add src folder"
+   59  ls
+   60  git cat-file -p HEAD
+   61  git cat-file -p 3cac
+   62  git cat-file -p 670
+   63  git cat-file -p 67099
+   64  git cat-file -p 9f1b
+   65  echo "print('bye')" >> src/main.py
+   66  git commit -am "edit main.py"
+   67  git cat-file -p HEAD^{tree}
+   68  git cat-file -p HEAD
+   69  git cat-file -p 0926
+   70  git cat-file -p HEAD
+   71  git rm readme.txt
+   72  git cat-file -p HEAD
+   73  git commit -m "remove readme"
+   74  git cat-file -p HEAD
+   75  echo "my notes" > readme.txt
+   76  git cat-file -p HEAD
+   77  git add readme.txt
+   78  git cat-file -p HEAD
+   79  git commit -m "add readme back"
+   80  git cat-file -p HEAD
+   81  git commit --allow-empty -m "nothing changed"
+   82  git cat-file -p HEAD
+   83  ls
+   84  git log --oneline
+   85  git log --oneline --stat
+   86  history > history.txt
+   87  ls
+   88  git log --oneline --summary
+   89  git branch
+   90  git log --oneline --name-status
+   91  ls
+   92  history > history.txt 

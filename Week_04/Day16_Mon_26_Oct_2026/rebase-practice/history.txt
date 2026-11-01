@@ -1,0 +1,317 @@
+    1  ls
+    2  git --version
+    3  git config --global user.name "fyzLbgx"
+    4  git config --global user.email "fayaz.labgex@gmail.com"
+    5  git branch
+    6  git config --global init.defaultBranch main
+    7  git branch
+    8  git config --global --list
+    9  mkdir git-lab
+   10  cd git-lab/
+   11  git init
+   12  la -l
+   13  ls .git/
+   14  cat .git/HEAD 
+   15  ls .git/refs/heads/
+   16  echo "hello" > app.txt
+   17  ls
+   18  git add app.txt
+   19  git commit -m "first commit"
+   20  ls
+   21  cd git-lab/
+   22  git log --oneline
+   23  ls .git/refs/heads
+   24  cat .git/refs/heads/main
+   25  echo "line 2" >> app.txt
+   26  git commit -am "second commit"
+   27  echo "line 3" >> app.txt
+   28  git commit -am "third commit"
+   29  git log --oneline
+   30  cat .git/refs/heads/main
+   31  git branch week04experiment
+   32  git branch
+   33  ls .git/refs/heads/main 
+   34  cat .git/refs/heads/main 
+   35  git cat-file -p e5f97ba
+   36  cat .git/refs/heads/week04experiment
+   37  git fsck
+   38  git cat-file -s e5f97ba
+   39  git cat-file -p f01f56f
+   40  git count-objects -vH
+   41  git cat-file -p c965250
+   42  git cat-file 4156377
+   43  cat-file -p e5f97ba
+   44  git cat-file -p e5f97ba
+   45  git cat-file  f01f5
+   46  git cat-file -p e5f97ba
+   47  git cat-file -p  f01f5
+   48  git cat-file -p  c965
+   49  git cat-file -p 4156377
+   50  git cat-file -p f976
+   51  git cat-file -p ce01
+   52  git cat-file -p app.txt
+   53  mkdir src
+   54  echo "print('hi')" > src/main.py
+   55  ls
+   56  echo "my notes" > readme.txt
+   57  git add .
+   58  git commit -m "add src folder"
+   59  ls
+   60  git cat-file -p HEAD
+   61  git cat-file -p 3cac
+   62  git cat-file -p 670
+   63  git cat-file -p 67099
+   64  git cat-file -p 9f1b
+   65  echo "print('bye')" >> src/main.py
+   66  git commit -am "edit main.py"
+   67  git cat-file -p HEAD^{tree}
+   68  git cat-file -p HEAD
+   69  git cat-file -p 0926
+   70  git cat-file -p HEAD
+   71  git rm readme.txt
+   72  git cat-file -p HEAD
+   73  git commit -m "remove readme"
+   74  git cat-file -p HEAD
+   75  echo "my notes" > readme.txt
+   76  git cat-file -p HEAD
+   77  git add readme.txt
+   78  git cat-file -p HEAD
+   79  git commit -m "add readme back"
+   80  git cat-file -p HEAD
+   81  git commit --allow-empty -m "nothing changed"
+   82  git cat-file -p HEAD
+   83  ls
+   84  git log --oneline
+   85  git log --oneline --stat
+   86  history > history.txt
+   87  ls
+   88  git log --oneline --summary
+   89  git branch
+   90  git log --oneline --name-status
+   91  ls
+   92  history > history.txt 
+   93  nano history.
+   94  cat .git/refs/heads/main
+   95  cat .git/refs/heads/week04experiment 
+   96  git status
+   97  git switch main
+   98  git ls-files --stage
+   99  echo "draft 1" > notes.txt
+  100  git hash-object notes.txt
+  101  git cat-file -p 0ff97eebb7214533df3df349a8d3f8f67227ab78
+  102  git add notes.txt
+  103  git cat-file -p 0ff97eebb7214533df3df349a8d3f8f67227ab78
+  104  git ls-files --stage
+  105  echo "draft 2" >> notes.txt
+  106  git status
+  107  git diff
+  108  git diff --staged
+  109  git commit -m "add notes"
+  110  cat notes.txt 
+  111  git show HEAD:notes.txt
+  112  cat .git/HEAD
+  113  git log --oneline --graph --all
+  114  cat .git/HEAD
+  115  cat .git/refs/heads/main 
+  116  cat .git/refs/heads/week04experiment 
+  117  git switch week04experiment 
+  118  ls
+  119  git cat-file -p 0ff97ee
+  120  git status
+  121  git commit -am "add draft 2"
+  122  git switch week04experiment 
+  123  cat .git/HEAD
+  124  git switch main
+  125  cat .git/HEAD
+  126  git switch week04experiment 
+  127  cat .git/HEAD
+  128  echo wia > expiriment.txt
+  129  git add experiment.txt
+  130  git add expiriment.txt 
+  131  git commit -m "expiriment.txt commited"
+  132  cat .git/refs/heads/week04experiment 
+  133  cat .git/refs/heads/main
+  134  git switch main
+  135  git cat-file -p f059db0
+  136  git log --oneline --graph --all
+  137  ls
+  138  git branch
+  139  ls
+  140  cd git-lab/
+  141  git branch
+  142  ls
+  143  git commit -am "work on main"
+  144  git log --oneline --graph --all
+  145  ls
+  146  git rev-parse week04experiment
+  147  ls .git/refs/heads
+  148  git branch -m week04experiment week04
+  149  fit branch
+  150  git branch
+  151  ls .git/refs/heads
+  152  git rev-parse week04
+  153  git switch week04 
+  154  cat .git/HEAD
+  155  git branch -m week04-temp-name
+  156  cat .git/HEAD
+  157  git branch
+  158  git switch main
+  159  git log --oneline --graph --all
+  160  git reflog show week04-temp-name
+  161  git switch week04
+  162  git branch -m week04
+  163  git branch
+  164  git branch -m main
+  165  git branch -m week04-temp-name week04
+  166  git switch main
+  167  git branch
+  168  git log --oneline --graph --all
+  169  git branch -d weEK04
+  170  git branch -d week04
+  171  git branch
+  172  git switch week04 
+  173  git status
+  174  git switch main
+  175  git merge week04
+  176  git branch -d week04
+  177  istory
+  178  history
+  179  mkdir ~/practice_day16
+  180  history
+  181  cd practice_day16/
+  182  git init
+  183  echo "Day16 practice" > README.md
+  184  git add README.md
+  185  git commit -m "Initial commit"
+  186  git switch -c develop
+  187  git branch
+  188  git switch -c feature/week4-gitflow
+  189  git branch
+  190  vim app.py
+  191  def greet(): return 'hello'
+  192  git add app.py
+  193  git commit -m "Add greet function"
+  194  git commit -am "Add add function"
+  195  cat app.py 
+  196  git commit -am "Add add function"
+  197  git add app.py
+  198  git commit -am "Add add function"
+  199  git log --oneline --graph --all
+  200  git switch develop
+  201  git merge --no-ff feature/week4-gitflow -m "Merge feature/week4-gitflow into develop"
+  202  git branch
+  203  git log --oneline --graph --all
+  204  git switch -c feature/week4_1-gitflow
+  205  git add ap.py
+  206  git commit -m "Add greet function"
+  207  git log --oneline --graph --all
+  208  git switch develop
+  209  git merge  feature/week4_1-gitflow  -m "Merge feature/week4_1-gitflow into develop"
+  210  git log --oneline --graph --all
+  211  cd ~
+  212  mkdir bookmark-practice
+  213  cd bookmark-practice
+  214  git init
+  215  echo "page one" > notes.txt
+  216  git add notes.txt
+  217  git commit -m "Page 1"
+  218  git log --oneline --graph --all
+  219  git switch -c develop
+  220  git log --oneline --graph --all
+  221  ls
+  222  git branch
+  223  git switch -c feature/fast
+  224  echo "fast feature" > fast.txt
+  225  git add fast.txt
+  226  git commit -m "Page 2 - fast feature"
+  227  git log --oneline --graph --all
+  228  git switch develop
+  229  git log --oneline --graph --all
+  230  git merge feature/fast
+  231  git log --oneline --graph --all
+  232  git switch -c feature/noff
+  233  echo "noff feature" > noff.txt
+  234  git add noff.txt
+  235  git commit -m "Page 3 - noff feature"
+  236  git log --oneline --graph --all
+  237  git switch develop
+  238  git merge --no-ff feature/noff -m "Merge page - noff feature"
+  239  git log --oneline --graph --all
+  240  git branch
+  241  git branch -d feature/fast
+  242  git log --oneline --graph --all
+  243  git branch -d feature/noff
+  244  git log --oneline --graph --all
+  245  ls
+  246  cd ~
+  247  mkdir rebase-practice
+  248  cd rebase-practice
+  249  git init
+  250  echo "page one" > notes.txt
+  251  git add notes.txt
+  252  git commit -m "Page 1"
+  253  git switch -c develop
+  254  git log --oneline --graph --all
+  255  git switch -c feature/rebase-demo
+  256  echo "my feature" > feature.txt
+  257  git add feature.txt
+  258  git commit -m "Page 2 - my feature"
+  259  git log --oneline --graph --all
+  260  git switch develop
+  261  echo "teammate work" > teammate.txt
+  262  git add teammate.txt
+  263  git commit -m "Page 3 - teammate work"
+  264  git log --oneline --graph --all
+  265  git switch feature/rebase-demo
+  266  git log --oneline -1
+  267  git log
+  268  git switch develop 
+  269  git log
+  270  git switch develop 
+  271  git switch feature/rebase-demo
+  272  git rebase develop
+  273  git log --oneline --graph --all
+  274  cd rebase-practice/
+  275  ls
+  276  git branch
+  277  git switch develop
+  278  git merge feature/rebase-demo
+  279  git log --oneline --graph --all
+  280  git branch -d feature/rebase-demo
+  281  git log --oneline --graph --all
+  282  git switch develop
+  283  git switch -c feature/conflict-a
+  284  echo "page one - written by A" > notes.txt
+  285  git commit -am "A changes notes"
+  286  git switch develop
+  287  git switch -c feature/conflict-b
+  288  echo "page one - written by B" > notes.txt
+  289  git commit -am "B changes notes"
+  290  git log --oneline --graph --all
+  291  git switch develop
+  292  git merge feature/conflict-a
+  293  cat notes.txt
+  294  git merge feature/conflict-b
+  295  git status
+  296  cat notes.txt
+  297  nano notes.txt
+  298  vim notes.txt
+  299  cat notes.txt
+  300  git add notes.txt
+  301  git commit -m "Merge feature/conflict-b, resolve conflict in notes.txt"
+  302  git log --oneline --graph --all
+  303  cat notes.txt
+  304  git branch -d feature/conflict-a
+  305  git branch -d feature/conflict-b
+  306  git log --oneline --graph --all
+  307  git switch main
+  308  git merge --no-ff develop -m "Release v1.0"
+  309  git tag v1.0
+  310  git log --oneline --graph --all
+  311  git branch -d develop 
+  312  git log --oneline --graph --all
+  313  git branch develop 40f2d50
+  314  git branch
+  315  git log --oneline --graph --all
+  316  vim branching_diagram.txt
+  317  history > history.txt
