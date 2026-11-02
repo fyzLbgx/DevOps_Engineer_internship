@@ -1,0 +1,191 @@
+    1  uname -a
+    2  tree
+    3  sudo apt update
+    4  sudo apt install tree
+    5  sudo apt update
+    6  sudo apt install -y git shellcheck tree
+    7  git --version
+    8  shellcheck --version
+    9  git --version
+   10  shellcheck --version
+   11  git config --global user.name "fyzLbgx"
+   12  git config --global user.email "fayaz.labgex@gmail.com"
+   13  git config --global init.defaultBranch main
+   14  git config --global core.editor nano
+   15  git config --list
+   16  ssh-keygen -t ed25519 -C "fayaz.labgex@gmail.com"
+   17  cat ~/.ssh/id_ed25519.pub
+   18  ssh-keygen -t ed25519 -C "fayaz.labgex@gmail.com"
+   19  cat ~/.ssh/id_ed25519.pub
+   20  ssh -T git@github.com
+   21  mkdir ~/day19_evidence
+   22  mkdir ~/git-hooks-practice
+   23  cd ~/git-hooks-practice
+   24  pwd
+   25  git init
+   26  vim README.md
+   27  cat README.md app.py
+   28  git add README.md app.py
+   29  git commit -m "Initial commit"
+   30  true
+   31  echo $?
+   32  false
+   33  echo $?
+   34  ls /ran
+   35  echo $?
+   36  git grep -n "Hello"
+   37  echo $?
+   38  git grep -n "TODO"
+   39  echo $?
+   40  ls .git/hooks
+   41  head -20 .git/hooks/pre-commit.sample
+   42  ls -l .git/hooks/pre-commit
+   43  chmod +x .git/hooks/pre-commit
+   44  ls -l .git/hooks/pre-commit
+   45  .git/hooks/pre-commit
+   46  echo $?
+   47  echo '# TODO: add error handling' >> app.py
+   48  cat app.py
+   49  git add app.py
+   50  git log --oneline
+   51  ubuntu@ip-172-31-24-244:~/git-hooks-practice$ ls -l .git/hooks/pre-commit
+   52  -rw-rw-r-- 1 ubuntu ubuntu 401 Nov  2 09:36 .git/hooks/pre-commit
+   53  ubuntu@ip-172-31-24-244:~/git-hooks-practice$ chmod +x .git/hooks/pre-commit
+   54  ls -l .git/hooks/pre-commit
+   55  -rwxrwxr-x 1 ubuntu ubuntu 401 Nov  2 09:36 .git/hooks/pre-commit
+   56  ubuntu@ip-172-31-24-244:~/git-hooks-practice$ .git/hooks/pre-commit
+   57  README.md:2:Practice repo for Git hooks: a pre-commit hook that blocks TODO comments,
+   58  pre-commit: commit aborted, remove the TODO comments listed above.
+   59  (Emergency bypass: git commit --no-verify)
+   60  ubuntu@ip-172-31-24-244:~/git-hooks-practice$ echo $?
+   61  1
+   62  ubuntu@ip-172-31-24-244:~/git-hooks-practice$ echo '# TODO: add error handling' >> app.py
+   63  ubuntu@ip-172-31-24-244:~/git-hooks-practice$ cat app.py
+   64  print("Hello from git hooks practice")
+   65  # TODO: add error handling
+   66  ubuntu@ip-172-31-24-244:~/git-hooks-practice$ git add app.py
+   67  ubuntu@ip-172-31-24-244:~/git-hooks-practice$  git commit -m "Add error handling note" 2>&1 | tee ~/day19_evidence/01_precommit_todo_abort.txt
+   68  README.md:2:Practice repo for Git hooks: a pre-commit hook that blocks TODO comments,
+   69  app.py:2:# TODO: add error handling
+   70  pre-commit: commit aborted, remove the TODO comments listed above.
+   71  (Emergency bypass: git commit --no-verify)
+   72  ubuntu@ip-172-31-24-244:~/git-hooks-practice$ git log --oneline
+   73  73e80e8 (HEAD -> main) Initial commit
+   74  ubuntu@ip-172-31-24-244:~/git-hooks-practice$ git diff --cached
+   75  git diff --cached
+   76  cd ~
+   77  ls
+   78  rm -rf ~/git-hooks-practice
+   79  rm -rf ~/day19_evidence
+   80  mkdir ~/git-hooks-practice
+   81  cd ~/git-hooks-practice
+   82  pwd
+   83  git init
+   84  nano README.md
+   85  nano app.py
+   86  nano hello.sh
+   87  chmod +x hello.sh
+   88  ./hello.sh 
+   89  git status
+   90  git add README.md app.py hello.sh
+   91  git commit -m "Initial commit"
+   92  git log --oneline
+   93  grep "Hello" app.py
+   94  echo $?
+   95  grep "TODO" app.py
+   96  echo $?
+   97  grep -q "Hello" app.py
+   98  echo $?
+   99  grep -n "Hello" app.py
+  100  git diff --cached --name-only
+  101  ls .git/hooks
+  102  nano .git/hooks/pre-commit
+  103  ls -l .git/hooks/pre-commit
+  104  chmod +x .git/hooks/pre-commit
+  105  ls -l .git/hooks/pre-commit
+  106  .git/hooks/pre-commit
+  107  echo $?
+  108  nano app.py
+  109  cat app.py
+  110  git diff --cached --name-only
+  111  git add app.py
+  112  git diff --cached --name-only
+  113  grep -n "TODO" app.py
+  114  git commit -m "Add error handling note"
+  115  git log --oneline
+  116  git status
+  117  nano app.py
+  118  git add app.py
+  119  git commit -m "Add hooks working message"
+  120  git log --oneline
+  121  vim newfiel
+  122  vim newfile
+  123  ls
+  124  git add .
+  125  ls
+  126  git commit -m newfile"
+  127  git commit -m "newfile"
+  128  git status
+  129  mkdir .githooks
+  130  mv .git/hooks/pre-commit .githooks/
+  131  ls .githooks/
+  132  ls -la .githooks
+  133  git config core.hooksPath .githooks
+  134  git config --get core.hooksPath
+  135  nano app.py
+  136  git add app.py
+  137  nano app.py
+  138  git add app.py 
+  139  git commit -m "Test again"
+  140  git restore --staged app.py
+  141  git restore app.py
+  142  cat app.py
+  143  nano .githooks/pre-push
+  144  chmod +x .githooks/pre-push
+  145  ls -la .githooks
+  146  shellcheck hello.sh
+  147  echo $?
+  148  .githooks/pre-push
+  149  git add .githooks
+  150  git ls-files -s .githooks
+  151  git commit -m "Add pre-commit and pre-push hooks"
+  152  git remote add origin git@github.com:fyzLbgx/git-hooks-practice.git
+  153  git remote -v
+  154  ls
+  155  git push -u origin main
+  156  ls -a
+  157  nano greet.sh
+  158  chmod +x greet.sh
+  159  shellcheck greet.sh
+  160  git status
+  161  nano greet.sh
+  162  shellcheck greet.sh
+  163  echo $?
+  164  ./greet.sh Fayaz
+  165  git add greet.sh
+  166  git commit -m "Fix shellcheck warnings in greet.sh"
+  167  git push
+  168  git log --oneline
+  169  cd ~
+  170  ls
+  171  git clone git@github.com:fyzLbgx/DevOps_Engineer_internship.git
+  172  cd ~/DevOps_Engineer_internship
+  173  git log --oneline -3
+  174  ls Week_04
+  175  mkdir Week_04/Day19_Thu_29_Oct_2026
+  176  cp -r ~/git-hooks-practice Week_04/Day19_Thu_29_Oct_2026/
+  177  rm -rf Week_04/Day19_Thu_29_Oct_2026/git-hooks-practice/.git
+  178  ls -la Week_04/Day19_Thu_29_Oct_2026/git-hooks-practice
+  179  ls -la Week_04/Day19_Thu_29_Oct_2026/git-hooks-practice/.githooks
+  180  cd ~/git-hooks-practice
+  181  git log --oneline > ~/DevOps_Engineer_internship/Week_04/Day19_Thu_29_Oct_2026/git_log.txt
+  182  git ls-files -s .githooks > ~/DevOps_Engineer_internship/Week_04/Day19_Thu_29_Oct_2026/hooks_saved_as_executable.txt
+  183  cd ~/DevOps_Engineer_internship
+  184  nano Week_04/Day19_Thu_29_Oct_2026/Day_19_Notes.txt
+  185  git status
+  186  git add Week_04/Day19_Thu_29_Oct_2026
+  187  git status
+  188  git commit -m "Week 4 Day 19: Git hooks"
+  189  git push
+  190  git log --oneline -3
+  191  history > Week_04/Day19_Thu_29_Oct_2026/Day19_terminal_history.txt
