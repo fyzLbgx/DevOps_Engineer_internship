@@ -1,0 +1,102 @@
+    1  clear
+    2  ls
+    3  sudo apt update
+    4  ls
+    5  clear
+    6  ls
+    7  rm ls
+    8  rmdir ls
+    9  sudo apt update
+   10  cat /etc/os-release 
+   11  git config --global user.name "fyzLbgx"
+   12  git config --global user.name "fayaz.labgex@gmail.com"
+   13  git config --global user.name "fyzLbgx"
+   14  git config --global user.email "fayaz.labgex@gmail.com"
+   15  git branch
+   16  git iit
+   17  git init
+   18  git branch
+   19  ls
+   20  git config --global init.defaultBranch main
+   21  git branch
+   22  git config --list
+   23  mkdir git-tags-practice
+   24  ls
+   25  rm .git
+   26  rm -rf -i .git
+   27  y
+   28  ls -a
+   29  cd git-tags-practice
+   30  ls
+   31  git init
+   32  ls -a
+   33  git status
+   34  nano README.md
+   35  git status
+   36  git add README.md 
+   37  git commit -m "Add README "
+   38  nano app.py
+   39  git add app.py
+   40  git commit -m "Add basic hello app"
+   41  nano README.md
+   42  git status
+   43  git diff
+   44  git add README.md
+   45  git commit -m "Add run instructions to README"
+   46  git log
+   47  cat ~/.ssh/id_ed25519.pub
+   48  clear
+   49  ssh -T git@github.com
+   50  git remote add origin https://github.com/fyzLbgx/git-tags-practice.git
+   51  git branch
+   52  git remote show origin 
+   53  git remote ls
+   54  git fetch origin
+   55  git ls-tree -r --name-only origin/git-tags-practice
+   56  git remote -v
+   57  git ls-tree -r --name-only origin/git-tags-practice.git
+   58  git branch
+   59  git push -u origin main
+   60  ssh -T git@github.com
+   61  git push -u origin main
+   62  git remote set-url origin git@github.com:fyzLbgx/git-tags-practice.git
+   63  git push -u origin main
+   64  git ls-tree -r --name-only origin/git-tags-practice.git
+   65  ls .git/
+   66  clear
+   67  history
+   68  git ls-tree -r --name-only origin/main
+   69  pwd
+   70  git ststus
+   71  git status
+   72  git log --oneline
+   73  git tag
+   74  git tag test-lw
+   75  git log --oneline
+   76  git tag
+   77  git show test-lw
+   78  git add README.md
+   79  git commit -m "Add run instructions to README"
+   80  git show --stat test-lw
+   81  git show test-lw
+   82  git cat-file -t test-lw
+   83  git tag -d test-lw
+   84  git tag -a v0.1.0-alpha -m "First alpha release: basic hello app with README"
+   85  git tag
+   86  git tag -l "v0.*"
+   87  git cat-file -t v0.1.0-alpha
+   88  git show v0.1.0-alpha
+   89  git log --oneline --decorate
+   90  git push origin v0.1.0-alpha
+   91  git ls-remote --tags origin
+   92  git checkout v0.1.0-alpha
+   93  git branch
+   94  git switch main
+   95  git switch -c hotfix-0.1 v0.1.0-alpha
+   96  git branch
+   97  git switch main
+   98  git branch
+   99  ls .git/refs/heads/
+  100  git log --oneline --decorate --all
+  101  git branch -d hotfix-0.1
+

@@ -1,0 +1,11 @@
+tag v0.1.0-alpha
+Tagger: fyzLbgx <fayaz.labgex@gmail.com>
+Date:   Mon Nov 2 06:47:44 2026 +0000
+
+First alpha release: basic hello app with README
+
+commit 87381d5a961824bce69b442d6e0620267948682c
+Author: fyzLbgx <fayaz.labgex@gmail.com>
+Date:   Mon Nov 2 06:10:27 2026 +0000
+
+    Add run instructions to README
