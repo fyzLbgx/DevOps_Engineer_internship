@@ -1,0 +1,90 @@
+    1* sudo apt upd
+    2  sudo apt install -y git gh
+    3  git config --global user.name "fyzLbgx"
+    4  git config --global user.email "fayaz.labgex@gmail.com"
+    5  git config --global init.defaultBranch main
+    6  git config --list
+    7  git config
+    8  gh auth login
+    9  gh auth status
+   10  gh repo create training-repo --public --add-readme --clone
+   11  cd training-repo
+   12  ls
+   13  git status
+   14  git switch -c feature/add-greeting-script
+   15  git branch
+   16  vim greet.sh
+   17  chmod +x greet.sh 
+   18  ./greet.sh 
+   19  git status
+   20  git add greet.sh
+   21  git commit -m "Add greeting script"
+   22  ./greet.sh 
+   23  vim greet.sh
+   24  ./greet.sh 
+   25  ./greet.sh fyz
+   26  git diff
+   27  git add greet.sh
+   28  git commit -m "Accept a name argument"
+   29  git add README.md
+   30  git diff
+   31  cat README.md 
+   32  git commit -m "Document usage in README"
+   33  git log --oneline
+   34  git push -u origin feature/add-greeting-script
+   35  vim /tmp/pr.md
+   36  git branch
+   37  gh pr create --base main --head feature/add-greeting-script   --title "Add greeting script with name argument"   --body-file /tmp/pr.md
+   38  gh pr list
+   39  gh pr view 1
+   40  gh pr diff 1
+   41  vim README.md
+   42  git diff --staged
+   43  git switch main
+   44  git pull
+   45  git log --oneline
+   46  git branch -D feature/add-greeting-script
+   47  git fetch --prune
+   48  cd ~
+   49  mkdir squash-practice
+   50  cd squash-practice
+   51  git init
+   52  echo "page one" > notes.txt
+   53  git add notes.txt
+   54  git commit -m "Page 1"
+   55  git switch -c develop
+   56  git switch -c feature/login
+   57  echo "login page" > login.txt
+   58  git add login.txt
+   59  git commit -m "Add login page"
+   60  echo "login page - fixed typo" > login.txt
+   61  git commit -am "Fix typo"
+   62  echo "login page - final" > login.txt
+   63  git commit -am "Fix another typo"
+   64  git log --oneline --graph --all
+   65  git switch develop
+   66  git merge --squash feature/login
+   67  git status
+   68  git commit -m "Add login feature"
+   69  git log --oneline --graph --all
+   70  git branch -d feature/login
+   71  git log --oneline --graph --all
+   72  git branch -D feature/login
+   73  git log --oneline --graph --all
+   74  cd
+   75  git clone https://github.com/fyzLbgx/DevOps_Engineer_internship.git
+   76  git branch
+   77  cd DevOps_Engineer_internship/
+   78  git branch
+   79  git switch main
+   80  git pull
+   81  git switch -c feature/day17-pr-practice
+   82  DAY=Day17_$(date +%a_%d_%b_%Y)
+   83  echo $DAY
+   84  ls
+   85  mkdir -p Week_04/$DAY
+   86  echo "PR = pull request: asking to merge my branch into main after review" > Week_04/$DAY/Day_17_Notes.txt
+   87  git add Week_04
+   88  git commit -m "Week 4 Day 17: add PR notes"
+   89  echo "Squash merge = all commits from the branch become one commit on main" >> Week_04/$DAY/Day_17_Notes.txt
+   90  history > Week_04/$DAY/Day17_terminal_history.txt

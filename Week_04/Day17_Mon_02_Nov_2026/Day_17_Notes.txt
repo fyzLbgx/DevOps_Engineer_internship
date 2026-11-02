@@ -1,1 +1,2 @@
 PR = pull request: asking to merge my branch into main after review
+Squash merge = all commits from the branch become one commit on main
