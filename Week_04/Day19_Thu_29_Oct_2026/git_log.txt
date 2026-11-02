@@ -1,0 +1,5 @@
+98b2738 Fix shellcheck warnings in greet.sh
+ced39f3 Add pre-commit and pre-push hooks
+c8723d7 newfile
+5be54ca Add hooks working message
+ae072e2 Initial commit

@@ -1,0 +1,20 @@
+#!/bin/bash
+# pre-push hook
+# Purpose: cancel the push if any shell script (.sh file) has problems found by shellcheck.
+
+echo "pre-push: checking shell scripts with shellcheck..."
+
+for file in *.sh
+do
+    echo "Checking $file"
+
+    if ! shellcheck "$file"
+    then
+        echo "ERROR: shellcheck found problems in $file."
+        echo "Push cancelled. Fix the problems and push again."
+        exit 1
+    fi
+done
+
+echo "pre-push: all scripts passed, push allowed."
+exit 0

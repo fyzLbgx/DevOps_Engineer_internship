@@ -1,0 +1,2 @@
+100755 a4ce66d1fd43a85d430c7f778336804c59d7e679 0	.githooks/pre-commit
+100755 21df9bc54883edbe2d4080284ec4b45c54104dd7 0	.githooks/pre-push

@@ -1,0 +1,29 @@
+#!/bin/bash
+# pre-commit hook
+# Purpose: cancel the commit if any file being committed contains the word TODO.
+
+# Step 1: ask Git for the names of the staged files.
+files=$(git diff --cached --name-only)
+
+# Step 2: check the files one by one.
+for file in $files
+do
+    # Skip the hook scripts themselves, because they contain the word TODO.
+    if [[ "$file" == .githooks/* ]]
+    then
+        continue
+    fi
+
+    # Look for TODO inside this file.
+    if grep -q "TODO" "$file"
+    then
+        echo "ERROR: $file contains a TODO comment:"
+        grep -n "TODO" "$file"
+        echo "Commit cancelled. Remove the TODO, run git add, and commit again."
+        exit 1
+    fi
+done
+
+# Step 3: no file had TODO, so allow the commit.
+echo "pre-commit: no TODO found, commit allowed."
+exit 0
