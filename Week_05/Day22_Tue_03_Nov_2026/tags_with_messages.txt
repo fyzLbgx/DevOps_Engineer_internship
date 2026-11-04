@@ -1,0 +1,6 @@
+v1.0.0          Release v1.0.0: LabGex API with status and lab tests endpoints
+v1.1.0          Release v1.1.0: get a single lab test by ID
+v1.1.1          Release v1.1.1: fix lab test lookup by ID
+v1.1.2          Release v1.1.2: correct Vitamin D price
+v2.0.0          Release v2.0.0: /tests now returns an object with count and tests
+v2.0.1          Release v2.0.1: correct Vitamin D price
