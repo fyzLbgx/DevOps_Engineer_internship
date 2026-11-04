@@ -1,0 +1,421 @@
+    1  clear
+    2  sudo apt update
+    3  clear
+    4  mkdir tag_practice
+    5  cd tag_practice/
+    6  git init
+    7  git config user.name "fyzLbgx"
+    8  git config user.email "fayazaltair@gmail.com"
+    9  echo "LabGex version 1" > app.txt
+   10  git add . && git commit -m "First release"
+   11  git log --oneline
+   12  git tag v0.1.0
+   13  git tag -a v1.0.0 -m "First stable release"
+   14  git show v0.1.0
+   15  git show v1.0.0
+   16  echo "Added login" >> app.txt
+   17  git commit -am "Add login feature"
+   18  git tag -a v1.1.0 -m "Login feature"
+   19  git show v1.1.0
+   20  git log --oneline
+   21  git tag
+   22  git tag -l "v1.1.*"
+   23  git log --oneline --decorate
+   24  git checkout v1.0.0
+   25  cat app.txt
+   26  git checkout main
+   27  git checkout master
+   28  git tag -d v0.1.0
+   29  git log --oneline --decorate
+   30  git push origin v1.1.1
+   31  echo "Added login" >> app.txt
+   32  git commit -am "Add login feature"
+   33  git tag -a v1.1.0 -m "Login feature"
+   34  echo "Fixed login bug" >> app.txt
+   35  git commit -am "Fix login bug"
+   36  git tag -a v1.1.1 -m "Login bug fix"
+   37  git push origin v1.1.1
+   38  cd ~
+   39  rm -rf tag_practice
+   40  git config --global init.defaultBranch main
+   41  git config --global user.name "fyzLbgx"
+   42  git config --global user.email "fayazaltair@gmail.com"
+   43  git config --global --list
+   44  curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
+   45  node -v
+   46  npm -v
+   47  sudo apt install -y nodejs
+   48  node -v
+   49  npm -v
+   50  mkdir labgex-app
+   51  cd labgex-app
+   52  git init
+   53  npm init
+   54  cat package.json 
+   55  ls
+   56  npm pkg set main=server.js
+   57  ls
+   58  npm pkg set scripts.start="node server.js"
+   59  ls
+   60  npm install express
+   61  ls
+   62  ls node_modules/
+   63  cat package.json 
+   64  echo "node_modules/" > .gitignore
+   65  nano server.js
+   66  npm start
+   67  git status
+   68  git add .
+   69  git commit -m "Initial LabGex API with home and lab tests endpoints"
+   70  git log --oneline
+   71  git tag -a v1.0.0 -m "Release v1.0.0: LabGex API with status and lab tests endpoints"
+   72  git log --oneline
+   73  git show tag
+   74  tag v1.0.0.0
+   75  git show v1.0.0.0
+   76  git show v1.0.0.
+   77  git show v1.0.0
+   78  git tag
+   79  git show v1.0.0 --stat
+   80  git log --oneline --decorate
+   81  git log --oneline --decorate     # 1 commit, labelled main AND v1.0.0
+   82  git tag                          # v1.0.0
+   83  git status                       # "nothing to commit, working tree clean"
+   84  cat package.json | grep version  # "version": "1.0.0"
+   85  ssh-keygen -t ed25519 -C "fayazaltair@gmail.com"
+   86  cat ~/.ssh/id_ed25519.pub
+   87  ssh -T git@github.com
+   88  git remote add origin git@github.com:fyzLbgx/labgex-app.git
+   89  git remote -v
+   90  git push -u origin main
+   91  git remote add origin git@github.com:fayaz960/labgex-app.git
+   92  git push -u origin main
+   93  git remote set-url origin git@github.com:fayaz960/labgex-app.git
+   94  git config --global --list
+   95  git config --global user.name "fayaz960"
+   96  git push -u origin main
+   97  git log --oneline
+   98  git push  v1.0.0
+   99  git push origin v1.0.0
+  100  cat > server.js << 'EOF'
+  101  const express = require('express');
+  102  const { version } = require('./package.json');
+  103  const app = express();
+  104  const PORT = 3000;
+  105  const labTests = [
+  106    { id: 1, name: 'Blood Sugar', price: 200 },
+  107    { id: 2, name: 'Thyroid Profile', price: 500 },
+  108    { id: 3, name: 'Vitamin D', price: 800 }
+  109  ];
+  110  app.get('/', (req, res) => {
+  111    res.json({ app: 'LabGex', version: version, status: 'running' });
+  112  });
+  113  app.get('/tests', (req, res) => {
+  114    res.json(labTests);
+  115  });
+  116  app.get('/tests/:id', (req, res) => {
+  117    const test = labTests.find(t => t.id === req.params.id);
+  118    if (!test) {
+  119      return res.status(404).json({ error: 'Test not found' });
+  120    }
+  121    res.json(test);
+  122  });
+  123  app.listen(PORT, () => {
+  124    console.log(`LabGex v${version} running on port ${PORT}`);
+  125  });
+  126  EOF
+  127  git diff
+  128  npm start
+  129  git add server.js
+  130  git commit -m "Add endpoint to get a single lab test by ID"
+  131  npm version minor --no-git-tag-version
+  132  cat package
+  133  cat package.json 
+  134  git diff
+  135  git commit -am "Release v1.1.0"
+  136  git log --oneline
+  137  git tag -a v1.1.0 -m "Release v1.1.0: get a single lab test by ID"
+  138  git push
+  139  git push  v1.1.0
+  140  git push
+  141  git push origin v1.1.0
+  142  git log --oneline
+  143  git log --oneline --decorate
+  144  npm start
+  145  vim server.js 
+  146  git diff
+  147  git diff -U0
+  148  npm start
+  149  git commit -am "Fix: convert ID to number when looking up a lab test"
+  150  npm version patch -m "Release v%s: fix lab test lookup by ID"
+  151  git log --oneline
+  152  git push --follow-tags
+  153  git ls-remote --tags origin
+  154  git cat-file -p v1.1.1
+  155  nano server.js
+  156  npm start
+  157  git commit -am "Change /tests to return count and tests (BREAKING CHANGE)"
+  158  npm version major -m "Release v%s: /tests now returns an object with count and tests"
+  159  git push --follow-tags
+  160  git log --oneline --decorate
+  161  git ls-remote --tags origin
+  162  npm start
+  163  ls
+  164  cd ~
+  165  git clone git@github.com:fayaz960/labgex-app.git labgex-prod
+  166  cd labgex-prod
+  167  ls ../
+  168  git tag
+  169  git switch v2.0.0
+  170  git switch --detach v2.0.0
+  171  git describe --tags    # should print v2.0.0
+  172  git log --oneline
+  173  npm ci
+  174  ls
+  175  npm start
+  176  git checkout v1.1.1
+  177  npm ci
+  178  npm start
+  179  git tag -a v9.9.9 -m "Oops, wrong tag"
+  180  git push origin v9.9.9
+  181  git log --oneline --decorate
+  182  git log --oneline
+  183  git log --oneline --all
+  184  git fetch --tags
+  185  git tag
+  186  git tag -d v9.9.9
+  187  git push origin --delete v9.9.9
+  188  cd ~/labgex-prod
+  189  git tag
+  190  cd ~/labgex-app
+  191  git tag
+  192  cd ~/labgex-app
+  193  git tag -a v9.9.9 -m "Oops, wrong tag"
+  194  git push origin v9.9.9
+  195  cd ~/labgex-prod
+  196  git fetch --tags
+  197  git tag                        # v9.9.9 is here now
+  198  cd ~/labgex-app
+  199  git tag -d v9.9.9
+  200  git push origin --delete v9.9.9
+  201  cd ~/labgex-prod
+  202  git tag                        # v9.9.9 is STILL here!
+  203  git fetch --prune --prune-tags
+  204  git tag
+  205  cd ~/labgex-app
+  206  git switch -c hotfix/1.1.x v1.1.1
+  207  git branch
+  208  git log --oneline
+  209  git log --oneline --all
+  210  git log --oneline --decorate -3
+  211  cat package.json | grep version
+  212  nano server.js
+  213  cd ~/labgex-app
+  214  npm start
+  215  git commit -am "Fix: correct Vitamin D price to 750"
+  216  npm version patch -m "Release v%s: correct Vitamin D price"
+  217  git push -u origin hotfix/1.1.x --follow-tags
+  218  git log --oneline -3
+  219  git switch main
+  220  git cherry-pick 7dc5
+  221  cat server.js 
+  222  git cherry-pick --abort
+  223  git status
+  224  git cherry-pick 13d802e
+  225  grep "Vitamin D" server.js
+  226  git log --oneline -3
+  227  grep "Vitamin D" server.js
+  228  git log --oneline -3
+  229  git describe --tags
+  230  npm version patch -m "Release v%s: correct Vitamin D price"
+  231  git push --follow-tags
+  232  git log --oneline --decorate --graph --all
+  233  cd ~/labgex-prod
+  234  git fetch --tags
+  235  git checkout v1.1.2
+  236  npm ci
+  237  npm start
+  238  history > ../history.txt
+  239  history
+  240  curl localhost:3000
+  241  cat labgex-app/package
+  242  cat labgex-app/package.json 
+  243  cat labgex-app/server.js 
+  244  curl localhost:3000
+  245  curl localhost:3000/tests
+  246  curl localhost:3000/test
+  247  curl localhost:3000
+  248  curl localhost:3000/tests
+  249  curl localhost:3000
+  250  curl localhost:3000/tests
+  251  curl localhost:3000/tests/2
+  252  curl localhost:3000/tests/2git add server.js
+  253  git commit -m "Add endpoint to get a single lab test by ID"
+  254  git add server.js
+  255  git commit -m "Add endpoint to get a single lab test by ID"
+  256  curl localhost:3000/tests/1
+  257  curl localhost:3000/tests/2
+  258  curl localhost:3000/tests/3
+  259  curl localhost:3000/tests/4
+  260  curl localhost:3000/tests/5
+  261  curl localhost:3000/test/5
+  262  curl localhost:3000/tests/a
+  263  curl localhost:3000
+  264  curl localhost:3000/tests/1
+  265  curl localhost:3000/tests/99
+  266  curl localhost:3000/tests
+  267  curl localhost:3000/tests/1
+  268  git commit -am "Change /tests to return count and tests (BREAKING CHANGE)"
+  269  curl localhost:3000/tests
+  270  curl localhost:3000/
+  271  curl localhost:3000/health
+  272  curl localhost:3000/tests/1
+  273  curl localhost:3000
+  274  curl localhost:3000/tests
+  275  git checkout v1.1.1
+  276  curl localhost:3000
+  277  curl localhost:3000/tests
+  278  cd ~/labgex-prod
+  279  git describe --tags
+  280  cd ~/labgex-app
+  281  git tag -n
+  282  git tag -l --sort=-v:refname
+  283  git log v1.1.0..v1.1.1 --oneline
+  284  git diff v1.1.1 v2.0.0 -- server.js
+  285  git tag --contains ae4180a
+  286  curl localhost:3000/tests/3
+  287  curl localhost:3000/tests
+  288  curl localhost:3000/tests/3
+  289  cd ~/labgex-app
+  290  git tag -l --sort=-v:refname
+  291  git log --oneline --decorate --graph --all
+  292  history > history.txt
+  293  ls
+  294  jistory
+  295  history
+  296  ls
+  297  git clone https://github.com/fyzLbgx/DevOps_Engineer_internship
+  298  sudo apt install tree 1>/dev/null 
+  299  tree -L 5 DevOps_Engineer_internship/
+  300  man tree | grep -e "-L"
+  301  gir branch
+  302  git branch
+  303  cd DevOps_Engineer_internship/
+  304  git branch
+  305  git branch -r
+  306  git push origin --delete feature/day17-pr-practice
+  307  gh repo create test-projects --public
+  308  sudo apt install gh -y -qq
+  309  gh repo create test-projects --private
+  310  gh auth login
+  311  gh repo create test-projects --private
+  312  git fetch origin
+  313  git branch
+  314  git remote add newrepo https://github.com/fyzLbgx/test-projects.git
+  315  git remote -v
+  316  git push newrepo refs/remotes/origin/test-projects:refs/heads/main
+  317  gh repo view fyzLbgx/test-projects --web
+  318  git ls-tree -r --name-only refs/remotes/origin/test-projects
+  319  git remote remove newrepo
+  320  git push origin --delete test-projects
+  321  git branch -r
+  322  cd ~/labgex-app
+  323  git switch main
+  324  git status
+  325  git log --oneline -3
+  326  git remote add practical https://github.com/fyzLbgx/git_tag_practical.git
+  327  git remote -v
+  328  git push practical main
+  329  git remote set-url practical git@github.com:fyzLbgx/git_tag_practical.git
+  330  ssh -T git@github.com 
+  331  git push practical main
+  332  gh repo create git_tag_practical --public --description "LabGex app: Git tags and release practice"
+  333  git remote add practical https://github.com/fyzLbgx/git_tag_practical.git
+  334  git remote -v
+  335  git push practical main
+  336  gh repo list fyzLbgx
+  337  git remote set-url practical https://github.com/fyzLbgx/git_tag_practical.git
+  338  git remote -v
+  339  git push practical main
+  340  git push practical --all
+  341  git push practical --tags
+  342  git ls-remote practical
+  343  gh release create v2.0.1 --repo fyzLbgx/git_tag_practical --title "v2.0.1" --notes "Vitamin D price fix. Breaking change since v2.0.0: /tests returns { count, tests }."
+  344  gh api -X PUT repos/fyzLbgx/git_tag_practical/collaborators/fayaz960
+  345  mkdir -p .github
+  346  cat > .github/CODEOWNERS << 'EOF'
+# Every file in this repo requires review from fayaz960
+* @fayaz960
+EOF
+
+  347  git add .github/CODEOWNERS
+  348  git commit -m "Add CODEOWNERS: fayaz960 reviews all changes"
+  349  git push practical main
+  350  git branch
+  351  git commit --allow-empty -m "Test: direct push to main should be blocked"
+  352  git push practical main
+  353  git remote -v
+  354  git reset --hard HEAD~1
+  355  git log --oneline -2
+  356  git log --oneline --all
+  357  git switch -c feature/hello-workflow
+  358  git branch
+  359  git ls-remote --tags practical
+  360  mkdir -p .github/workflows
+  361  cat > .github/workflows/hello.yml << 'EOF'
+name: Hello Workflow
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello
+        run: echo "Hello from GitHub Actions"
+EOF
+
+  362  git add .github/workflows/hello.yml
+  363  git commit -m "Add first GitHub Actions workflow"
+  364  git push -u practical feature/hello-workflow
+  365  gh pr create --repo fyzLbgx/git_tag_practical --base main --head feature/hello-workflow --title "Add first GitHub Actions workflow" --body "Adds hello.yml: runs on push to main and echoes a message."
+  366  gh api -X PUT repos/fyzLbgx/DevOps_Engineer_internship/collaborators/fayaz960
+  367  gh api repos/fyzLbgx/DevOps_Engineer_internship/collaborators --jq '.[].login'
+  368  cd ~/DevOps_Engineer_internship
+  369  git switch main
+  370  git pull
+  371  git status
+  372  clear
+  373  mkdir -p .github
+  374  cat > .github/CODEOWNERS << 'EOF'
+# Every file in this repo requires review from fayaz960
+* @fayaz960
+EOF
+
+  375  git add .github/CODEOWNERS
+  376  git commit -m "Add CODEOWNERS: fayaz960 reviews all changes"
+  377  git push
+  378  git commit --allow-empty -m "Test: direct push to main should be blocked"
+  379  git push
+  380  git reset --hard HEAD~1
+  381  git status
+  382  git branc
+  383  git branch
+  384  git remote -v
+  385  tree .
+  386  cd ~/DevOps_Engineer_internship
+  387  git switch main
+  388  git pull
+  389  git switch -c week05/day22-github-actions-basics
+  390  DEST=~/DevOps_Engineer_internship/Week_05/Day22_Tue_03_Nov_2026
+  391  mkdir -p $DEST/labgex-app
+  392* 
+  393  git log --oneline --decorate --graph --all
+  394  git tag -n > $DEST/tags_with_messages.txt
+  395  git ls-remote --tags practical > $DEST/remote_tags.txt
+  396  cd ~/DevOps_Engineer_internship
+  397  tree -a $DEST
+  398  history > $DEST
+  399  history > $DEST/Day22_terminal_history.txt
