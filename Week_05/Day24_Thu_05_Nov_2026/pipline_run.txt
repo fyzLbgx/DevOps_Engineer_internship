@@ -1,0 +1,130 @@
+2026-11-05T12:28:06.255692Z 00O [0KRunning with gitlab-runner 19.5.2 (66ad5002)[0;m
+2026-11-05T12:28:06.255733Z 00O [0K  on ec2-runne f_IKu7tZT, system ID: s_c2c33506bf90[0;m
+2026-11-05T12:28:06.255737Z 00O [0K  UUID: 01a1ab1d-291d-7b35-ab6f-1d9e2465dd24[0;m
+2026-11-05T12:28:06.255802Z 00O section_start:1793881686:prepare_executor
+[0K
+2026-11-05T12:28:06.255810Z 00O+[0K[36;1mPreparing the "shell" executor[0;m[0;m
+2026-11-05T12:28:06.256016Z 00O [0KUsing Shell (bash) executor...[0;m
+2026-11-05T12:28:06.256021Z 00O section_end:1793881686:prepare_executor
+[0K
+2026-11-05T12:28:06.256289Z 00O+section_start:1793881686:prepare_script
+[0K
+2026-11-05T12:28:06.256294Z 00O+[0K[36;1mPreparing environment[0;m[0;m
+2026-11-05T12:28:06.285658Z 01O Running on ip-172-31-19-167...
+2026-11-05T12:28:06.313597Z 01O Running on CPU: Intel(R) Xeon(R) Platinum 8259CL CPU @ 2.50GHz (avx, avx2, avx512f)
+2026-11-05T12:28:06.318994Z 00O section_end:1793881686:prepare_script
+[0K
+2026-11-05T12:28:06.320051Z 00O+section_start:1793881686:get_sources
+[0K
+2026-11-05T12:28:06.320060Z 00O+[0K[36;1mGetting source from Git repository[0;m[0;m
+2026-11-05T12:28:06.398366Z 01O [32;1mGitaly correlation ID: a55bdb352dcad6d4-IAD[0;m
+2026-11-05T12:28:06.407032Z 01O [32;1mFetching changes with git depth set to 20...[0;m
+2026-11-05T12:28:06.413952Z 01O Reinitialized existing Git repository in /home/gitlab-runner/builds/f_IKu7tZT/0/fayazaltair/ci-practice/.git/
+2026-11-05T12:28:07.762547Z 01O [32;1mChecking out 385d972d as detached HEAD (ref is main)...[0;m
+2026-11-05T12:28:07.786230Z 01O [32;1mSkipping Git submodules setup[0;m
+2026-11-05T12:28:07.791444Z 00O section_end:1793881687:get_sources
+[0K
+2026-11-05T12:28:07.795012Z 00O+section_start:1793881687:step_script
+[0K
+2026-11-05T12:28:07.795034Z 00O+[0K[36;1mExecuting "step_script" stage of the job script[0;m[0;m
+2026-11-05T12:28:07.842640Z 01O [32;1m$ echo "===== Building commit $CI_COMMIT_SHORT_SHA ====="[0;m
+2026-11-05T12:28:07.842680Z 01O ===== Building commit 385d972d =====
+2026-11-05T12:28:07.842681Z 01O [32;1m$ echo "===== Step 1 - Log in to Docker Hub ====="[0;m
+2026-11-05T12:28:07.842683Z 01O ===== Step 1 - Log in to Docker Hub =====
+2026-11-05T12:28:07.842689Z 01O [32;1m$ echo "$DOCKER_TOKEN" | docker login --username "$DOCKER_USERNAME" --password-stdin[0;m
+2026-11-05T12:28:07.960024Z 01E 
+2026-11-05T12:28:07.960062Z 01E WARNING! Your credentials are stored unencrypted in '/home/gitlab-runner/.docker/config.json'.
+2026-11-05T12:28:07.960064Z 01E Configure a credential helper to remove this warning. See
+2026-11-05T12:28:07.960066Z 01E https://docs.docker.com/go/credential-store/
+2026-11-05T12:28:07.960067Z 01E 
+2026-11-05T12:28:07.960160Z 01O Login Succeeded
+2026-11-05T12:28:07.962185Z 01O [32;1m$ echo "===== Step 2 - Build the image with a simple local name ====="[0;m
+2026-11-05T12:28:07.962193Z 01O ===== Step 2 - Build the image with a simple local name =====
+2026-11-05T12:28:07.962198Z 01O [32;1m$ docker build -t ci-practice .[0;m
+2026-11-05T12:28:07.977776Z 01E DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+2026-11-05T12:28:07.977785Z 01E             Install the buildx component to build images with BuildKit:
+2026-11-05T12:28:07.977786Z 01E             https://docs.docker.com/go/buildx/
+2026-11-05T12:28:07.977788Z 01E 
+2026-11-05T12:28:08.021216Z 01O Sending build context to Docker daemon  316.4kB
+
+2026-11-05T12:28:08.024276Z 01O Step 1/7 : FROM node:26-alpine
+2026-11-05T12:28:08.048029Z 01O  ---> c6ad9e9c1d80
+2026-11-05T12:28:08.048037Z 01O Step 2/7 : WORKDIR /app
+2026-11-05T12:28:08.058275Z 01O  ---> Using cache
+2026-11-05T12:28:08.058284Z 01O  ---> ba0f5b10b62d
+2026-11-05T12:28:08.058285Z 01O Step 3/7 : COPY package*.json ./
+2026-11-05T12:28:08.070091Z 01O  ---> Using cache
+2026-11-05T12:28:08.070100Z 01O  ---> 851917891a20
+2026-11-05T12:28:08.070101Z 01O Step 4/7 : RUN npm ci --omit=dev
+2026-11-05T12:28:08.078190Z 01O  ---> Using cache
+2026-11-05T12:28:08.078198Z 01O  ---> d7b1d6fb85a6
+2026-11-05T12:28:08.078200Z 01O Step 5/7 : COPY math.js app.js ./
+2026-11-05T12:28:08.087018Z 01O  ---> Using cache
+2026-11-05T12:28:08.087027Z 01O  ---> 81a35b555beb
+2026-11-05T12:28:08.087028Z 01O Step 6/7 : EXPOSE 3000
+2026-11-05T12:28:08.096434Z 01O  ---> Using cache
+2026-11-05T12:28:08.096531Z 01O  ---> efefd2865725
+2026-11-05T12:28:08.096534Z 01O Step 7/7 : CMD ["node", "app.js"]
+2026-11-05T12:28:08.112169Z 01O  ---> Using cache
+2026-11-05T12:28:08.112282Z 01O  ---> 2db2867b83b5
+2026-11-05T12:28:08.117056Z 01O Successfully built 2db2867b83b5
+2026-11-05T12:28:08.126490Z 01O Successfully tagged ci-practice:latest
+2026-11-05T12:28:08.128328Z 01O [32;1m$ echo "===== Step 3 - Give the image its Docker Hub names ====="[0;m
+2026-11-05T12:28:08.128336Z 01O ===== Step 3 - Give the image its Docker Hub names =====
+2026-11-05T12:28:08.128342Z 01O [32;1m$ docker tag ci-practice 974522/ci-practice:latest[0;m
+2026-11-05T12:28:08.169276Z 01O [32;1m$ docker tag ci-practice 974522/ci-practice:$CI_COMMIT_SHORT_SHA[0;m
+2026-11-05T12:28:08.199226Z 01O [32;1m$ echo "===== Step 4 - Show the images on this machine ====="[0;m
+2026-11-05T12:28:08.199236Z 01O ===== Step 4 - Show the images on this machine =====
+2026-11-05T12:28:08.199238Z 01O [32;1m$ docker images[0;m
+2026-11-05T12:28:08.269588Z 01E WARNING: This output is designed for human readability. For machine-readable output, please use --format.
+2026-11-05T12:28:08.269624Z 01O IMAGE                         ID             DISK USAGE   CONTENT SIZE   EXTRA
+2026-11-05T12:28:08.269627Z 01O 974522/ci-practice:385d972d   2db2867b83b5        263MB         64.9MB        
+2026-11-05T12:28:08.269629Z 01O 974522/ci-practice:7311f276   2db2867b83b5        263MB         64.9MB        
+2026-11-05T12:28:08.269630Z 01O 974522/ci-practice:latest     2db2867b83b5        263MB         64.9MB        
+2026-11-05T12:28:08.269638Z 01O ci-practice:latest            2db2867b83b5        263MB         64.9MB        
+2026-11-05T12:28:08.269650Z 01O node:26-alpine                c6ad9e9c1d80        252MB         63.3MB        
+2026-11-05T12:28:08.271798Z 01O [32;1m$ echo "===== Step 5 - Upload both names to Docker Hub ====="[0;m
+2026-11-05T12:28:08.271808Z 01O ===== Step 5 - Upload both names to Docker Hub =====
+2026-11-05T12:28:08.271813Z 01O [32;1m$ docker push 974522/ci-practice:latest[0;m
+2026-11-05T12:28:08.291276Z 01O The push refers to repository [docker.io/974522/ci-practice]
+2026-11-05T12:28:08.396257Z 01O 01e890a20175: Waiting
+2026-11-05T12:28:08.396266Z 01O c69f7bb2898a: Waiting
+2026-11-05T12:28:08.396267Z 01O 2984027fcf20: Waiting
+2026-11-05T12:28:08.396268Z 01O 7b229517ed22: Layer already exists
+2026-11-05T12:28:08.396274Z 01O e731957ed974: Waiting
+2026-11-05T12:28:08.396276Z 01O 5a4a4bdaa6f2: Waiting
+2026-11-05T12:28:08.396279Z 01O 46f115b2e1ef: Layer already exists
+2026-11-05T12:28:08.489278Z 01O 2984027fcf20: Layer already exists
+2026-11-05T12:28:08.489287Z 01O e731957ed974: Layer already exists
+2026-11-05T12:28:08.489289Z 01O 5a4a4bdaa6f2: Layer already exists
+2026-11-05T12:28:08.489290Z 01O 01e890a20175: Layer already exists
+2026-11-05T12:28:08.489291Z 01O c69f7bb2898a: Layer already exists
+2026-11-05T12:28:08.489662Z 01O latest: digest: sha256:2db2867b83b53c0dd64ae11a0ba97c2033bbe146ef7d93c7604a669a3063536f size: 1837
+2026-11-05T12:28:08.494345Z 01O [32;1m$ docker push 974522/ci-practice:$CI_COMMIT_SHORT_SHA[0;m
+2026-11-05T12:28:08.511130Z 01O The push refers to repository [docker.io/974522/ci-practice]
+2026-11-05T12:28:08.614095Z 01O c69f7bb2898a: Layer already exists
+2026-11-05T12:28:08.614223Z 01O 7b229517ed22: Layer already exists
+2026-11-05T12:28:08.614225Z 01O e731957ed974: Layer already exists
+2026-11-05T12:28:08.614226Z 01O 2984027fcf20: Layer already exists
+2026-11-05T12:28:08.614227Z 01O 46f115b2e1ef: Layer already exists
+2026-11-05T12:28:08.614319Z 01O 5a4a4bdaa6f2: Layer already exists
+2026-11-05T12:28:08.614331Z 01O 01e890a20175: Layer already exists
+2026-11-05T12:28:10.012599Z 01O 385d972d: digest: sha256:2db2867b83b53c0dd64ae11a0ba97c2033bbe146ef7d93c7604a669a3063536f size: 1837
+2026-11-05T12:28:10.019578Z 00O section_end:1793881690:step_script
+[0K
+2026-11-05T12:28:10.021812Z 00O+section_start:1793881690:after_script
+[0K
+2026-11-05T12:28:10.021955Z 00O+[0K[36;1mRunning after_script[0;m[0;m
+2026-11-05T12:28:10.070554Z 01O [32;1mRunning after script...[0;m
+2026-11-05T12:28:10.070596Z 01O [32;1m$ echo "===== Cleanup - log out of Docker Hub ====="[0;m
+2026-11-05T12:28:10.070598Z 01O ===== Cleanup - log out of Docker Hub =====
+2026-11-05T12:28:10.070599Z 01O [32;1m$ docker logout[0;m
+2026-11-05T12:28:10.083403Z 01O Removing login credentials for https://index.docker.io/v1/
+2026-11-05T12:28:10.088171Z 00O section_end:1793881690:after_script
+[0K
+2026-11-05T12:28:10.093008Z 00O+section_start:1793881690:cleanup_file_variables
+[0K
+2026-11-05T12:28:10.093033Z 00O+[0K[36;1mCleaning up project directory and file based variables[0;m[0;m
+2026-11-05T12:28:10.154224Z 00O section_end:1793881690:cleanup_file_variables
+[0K
+2026-11-05T12:28:10.154915Z 00O [32;1mJob succeeded[0;m

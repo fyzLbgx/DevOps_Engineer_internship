@@ -1,0 +1,26 @@
+stages:
+  - test
+  - build
+
+test:
+  stage: test
+  tags:
+    - aws
+  script:
+    - docker run --rm -v "$PWD":/src:ro node:26-alpine sh -c "cp -r /src /app && cd /app && npm ci && npm test"
+
+build-and-push:
+  stage: build
+  tags:
+    - aws
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  variables:
+    IMAGE: "$DOCKER_USERNAME/ci-practice"
+  script:
+    - echo "$DOCKER_TOKEN" | docker login --username "$DOCKER_USERNAME" --password-stdin
+    - docker build -t "$IMAGE:latest" -t "$IMAGE:$CI_COMMIT_SHORT_SHA" .
+    - docker push "$IMAGE:latest"
+    - docker push "$IMAGE:$CI_COMMIT_SHORT_SHA"
+  after_script:
+    - docker logout
