@@ -1,0 +1,48 @@
+name: CI Manual
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Look around the empty machine
+        run: |
+          echo "Who am I: $(whoami)"
+          echo "Where am I: $(pwd)"
+          echo "Files here:"
+          ls -la
+
+      - name: Get the code (manual checkout)
+        run: |
+          git init
+          git remote add origin https://github.com/${{ github.repository }}.git
+          git fetch --depth 1 origin ${{ github.sha }}
+          git checkout FETCH_HEAD
+          ls -la
+
+      - name: Install Node with nvm
+        run: |
+          export NVM_DIR="$HOME/.nvm"
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+          source "$NVM_DIR/nvm.sh"
+          nvm install 26
+          node -v
+          npm -v
+
+      - name: Install dependencies
+        run: |
+          export NVM_DIR="$HOME/.nvm"
+          source "$NVM_DIR/nvm.sh"
+          npm ci
+
+      - name: Run tests
+        run: |
+          export NVM_DIR="$HOME/.nvm"
+          source "$NVM_DIR/nvm.sh"
+          npm test
