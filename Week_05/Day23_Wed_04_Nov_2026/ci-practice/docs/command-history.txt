@@ -1,0 +1,98 @@
+    1  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.41.0/install.sh | bash
+    2  \. "$HOME/.nvm/nvm.sh"
+    3  nvm install 26
+    4  node -v
+    5  npm -v
+    6  git config --global user.name "fayzLbgx"
+    7  git config --global user.email "fayazaltair@gmail.com"
+    8  git config --list
+    9  git --version
+   10  mkdir ci-practice
+   11  cd ci-practice
+   12  git init
+   13  git branch
+   14  npm init -y
+   15  cat package.json
+   16  npm install --save-dev jest
+   17  nano math.js
+   18  function add(a, b) {
+   19  }
+   20  function subtract(a, b) {
+   21  }
+   22  module.exports = { add, subtract };
+   23  nano math.test.js
+   24  ls
+   25  npm pkg set scripts.test="jest"
+   26  cat package.json
+   27  npm test
+   28  echo $?
+   29  vim math.js 
+   30  vim math.test.js 
+   31  npm test
+   32  echo $?
+   33  vim math.test.js 
+   34  npm test
+   35  echo $?
+   36  echo "node_modules/" > .gitignore
+   37  ssh-keygen -t ed25519 -C "fayazaltair@gmail.com"
+   38  cat ~/.ssh/id_ed25519.pub
+   39  ssh -T git@github.com
+   40  git status
+   41  git add .
+   42  git commit -m "Add math functions and Jest tests"
+   43  git branch
+   44  git branch -M main
+   45  git branch
+   46  git config --global init.defaultBranch main
+   47  git remote add origin git@github.com:fayaz960/ci-practice.git
+   48  ssh-keygen -t ed25519 -C "fayazaltair@gmail.com"
+   49  git push -u origin main
+   50  mkdir -p .github/workflows
+   51  nano .github/workflows/ci.yml
+   52  cat .github/workflows/ci.yml 
+   53  git add .github/workflows/ci.yml
+   54  git commit -m "Add CI workflow to run tests"
+   55  git push
+   56  nano .github/workflows/ci-manual.yml
+   57  cat .github/workflows/ci-manual.yml
+   58  git add .github/workflows/ci-manual.yml
+   59  git commit -m "Add manual CI workflow without presets"
+   60  git push
+   61  cd ci-practice
+   62  git remote -v 
+   63  git checkout -b add-multiply
+   64  vim math.js
+   65  vim math.test.js
+   66  git add math.js math.test.js
+   67  git commit -m "Add multiply function"
+   68  git push -u origin add-multiply
+   69  git switch main
+   70  git pull origin main
+   71  echo "* @fyzLbgx" > .github/CODEOWNERS
+   72  git add .github/CODEOWNERS && git commit -m "Add CODEOWNERS: fyzLbgx reviews all changes"
+   73  git push origin main
+   74  vim math.js
+   75  git branch
+   76  git switch add-multiply 
+   77  vim math.js 
+   78  npm test
+   79  git add math.js
+   80  git commit -m "Fix multiply to use * instead of +"
+   81  git push
+   82  ls -la
+   83  git switch main
+   84  ls -la
+   85  ls -la .github/
+   86  git switch add-multiply 
+   87  ls -la .github/
+   88  git checkout main
+   89  git pull
+   90  git switch main
+   91  git pull
+   92  git branch -d add-multiply
+   93  cd ~/ci-practice
+   94  git switch main
+   95  git pull
+   96  git switch -c learning-log
+   97  mkdir docs
+   98  history > docs/command-history.txt
