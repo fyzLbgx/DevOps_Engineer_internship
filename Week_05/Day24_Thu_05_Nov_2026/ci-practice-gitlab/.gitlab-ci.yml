@@ -1,0 +1,57 @@
+stages:
+  - test
+  - build
+
+test:
+  stage: test
+  tags:
+    - aws
+  script:
+    - echo "===== Who am I and where am I? ====="
+    - whoami
+    - pwd
+    - ls -la
+
+    - echo "===== Step 1 - Start a temporary Node container ====="
+    - docker run -d --name test-box -w /app node:26-alpine sleep 600
+
+    - echo "===== Step 2 - Copy the code into the container ====="
+    - docker cp ./. test-box:/app
+
+    - echo "===== Step 3 - Install Jest inside the container ====="
+    - docker exec test-box npm ci
+
+    - echo "===== Step 4 - Run the tests inside the container ====="
+    - docker exec test-box npm test
+  after_script:
+    - echo "===== Cleanup - delete the temporary container ====="
+    - docker rm -f test-box
+
+build-and-push:
+  stage: build
+  tags:
+    - aws
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+  script:
+    - echo "===== Building commit $CI_COMMIT_SHORT_SHA ====="
+
+    - echo "===== Step 1 - Log in to Docker Hub ====="
+    - echo "$DOCKER_TOKEN" | docker login --username "$DOCKER_USERNAME" --password-stdin
+
+    - echo "===== Step 2 - Build the image with a simple local name ====="
+    - docker build -t ci-practice .
+
+    - echo "===== Step 3 - Give the image its Docker Hub names ====="
+    - docker tag ci-practice 974522/ci-practice:latest
+    - docker tag ci-practice 974522/ci-practice:$CI_COMMIT_SHORT_SHA
+
+    - echo "===== Step 4 - Show the images on this machine ====="
+    - docker images
+
+    - echo "===== Step 5 - Upload both names to Docker Hub ====="
+    - docker push 974522/ci-practice:latest
+    - docker push 974522/ci-practice:$CI_COMMIT_SHORT_SHA
+  after_script:
+    - echo "===== Cleanup - log out of Docker Hub ====="
+    - docker logout

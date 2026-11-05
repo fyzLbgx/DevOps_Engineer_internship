@@ -1,0 +1,100 @@
+sudo apt update
+sudo apt install -y git docker.io
+sudo usermod -aG docker $USER
+exit
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+source ~/.bashrc
+nvm install 26
+git config --global user.name "fyzLbgx"
+git config --global user.email "fayaz.labgex@gmail.com"
+git config --global user.name "fayaz960"
+git config --global user.name "fayaz"
+git config --global user.email "fayazaltair@gmail.com"
+git config --global init.defaultBranch main
+ssh-keygen -t ed25519 -C "fayazaltair+1@gmail.com"
+cat ~/.ssh/id_ed25519.pub
+ssh -T git@gitlab.com
+git clone git@gitlab.com:fayazaltair/ci-practice.git
+cd ci-practice/
+ls
+npm init -y
+nvm install 26
+node -v
+sudo apt update
+sudo apt install -y libatomic1
+node -v
+npm init -y
+npm install --save-dev jest
+cat package.json 
+npm pkg set scripts.test="jest"
+cat package.json 
+echo "node_modules/" > .gitignore
+vim math.js
+vim math.test.js
+npm test
+npm install express
+vim app.js
+node app.js
+timeout 30 node app.js &
+curl localhost:3000
+vim dockerfile
+printf "node_modules\n" > .dockerignore
+docker build -t ci-practice:local .
+docker run -d -p 3000:3000 --name calc ci-practice:local
+docker exec -it ci-practice:local /bin/bash
+docker ps
+docker exec -it calc /bin/bash
+docker exec -it calc /sh
+docker exec -it calc bash
+docker exec -it calc sh
+curl localhost:3000
+docker stop calc && docker rm calc
+curl localhost:3000
+vim .gitlab-ci.yml
+git branch
+git switch -c docker-build
+git add .
+git status
+git commit -m "Add app, Dockerfile and GitLab CI pipeline"
+git push -u origin docker-build
+ls
+git branch
+git switch main
+git pull --prune
+git branch
+git branch -d docker-build
+mv .gitlab-ci.yml gitlab-ci.backup
+vim .gitlab-ci.yml
+git add .gitlab-ci.yml gitlab-ci.backup 
+git status
+git log --oneline -3
+git restore --staged .gitlab-ci.yml gitlab-ci.backup
+git status
+git add gitlab-ci.backup 
+git status
+git restore --staged gitlab-ci.backup
+git add -N gitlab-ci.backup
+git status
+git commit -am "Update pipeline and add backup"
+git push 
+cat ~/.ssh/id_ed25519.pub
+ssh -T git@github.com
+cd ~
+git clone git@github.com:fyzLbgx/DevOps_Engineer_internship.git
+cd DevOps_Engineer_internship
+git config user.email "fayaz.labgex@gmail.com"
+git switch -c day24-gitlab-docker-ci
+mkdir -p Week_05/Day24_Thu_05_Nov_2026/ci-practice-gitlab
+ls
+cd ..
+ls
+ls ci-practice/
+cd ~/ci-practice
+git switch main
+git pull
+git archive main | tar -x -C ~/DevOps_Engineer_internship/Week_05/Day24_Thu_05_Nov_2026/ci-practice-gitlab
+cd ~/DevOps_Engineer_internship/Week_05/Day24_Thu_05_Nov_2026/ci-practice-gitla
+cd ~/DevOps_Engineer_internship/Week_05/Day24_Thu_05_Nov_2026/ci-practice-gitlab
+ls
+history > terminal_history.txt
+rm terminal_history.txt 
